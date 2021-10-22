@@ -1,0 +1,300 @@
+
+
+@import "//netdna.bootstrapcdn.com/font-awesome/3.0/css/font-awesome.css";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html,body {
+   height: 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    font-family: DM Sans!important;
+  }
+
+  .margem{
+
+      margin-left: 30px;
+  }
+
+  .borda{
+    border: 1px solid red;
+  }
+
+
+ .deus{
+   padding-right: 300px!important;
+ }
+
+ .infos{
+   margin-right: 500px!important;
+ }
+
+ .infoss{
+   margin-right: 350px!important;
+ }
+ .cfunciona{
+
+    /* padding-right: 300px; */
+    width: 860px;
+    height: 39px;
+    font-family: DM Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 122%;
+    /* identical to box height, or 15px */
+
+
+
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+
+    color: #FFFFFF;
+
+    opacity: 0.5;
+ }
+
+ .svisitas{
+    width: 860px;
+    height: 59px;
+
+    font-family: DM Sans!important;
+    font-style: normal;
+    font-weight: 500;
+    margin-left: 60px!important;
+    font-size: 48px;
+    line-height: 122%;
+    /* identical to box height, or 59px */
+
+    text-align: center;
+
+    color: #FFFFFF;
+ }
+ .descricao{
+   font-family: DM Sans;
+    width: 618px;
+    height: 68px;
+    padding-right: 90px;
+    font-family: poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 24px;
+    /* or 170% */
+
+    text-align: justify;
+    color: rgba(255, 255, 255, 0.5);
+
+ }
+
+ .eu{
+    margin-top: 10px;
+    padding-right: 430px;
+ }
+
+ .inputfundo{
+    position: absolute;
+    width: 370px!important;
+    height: 373px !important;
+
+    background: rgba(255, 255, 255, 0.21);
+    box-shadow: 0px 20px 50px rgba(59, 62, 67, 0.05);
+    border-radius: 15px;
+ }
+
+ .inputfundo2{
+    position: absolute;
+    width: 370.73px!important;
+    height: 380.74px!important;
+    right: 15px;
+    top: 15px;
+    background: #E8F4FF;
+    box-shadow: 0px 20px 50px rgba(59, 62, 67, 0.05);
+    border-radius: 15px;
+
+
+ }
+
+ .infbaixo{
+   font-size: 10px;
+   line-height: 10px
+ }
+
+ .under{
+   color: linear-gradient(249.78deg, #35D3FF -0.64%, #A963FB 103.6%);
+
+   width: 165px;
+   height: 17px;
+
+   font-family: Roboto;
+   font-style: normal;
+   font-weight: normal;
+   ;
+   /* identical to box height */
+
+   text-decoration-line: underline;
+ }
+
+
+ .seja{
+    margin-top: 20px;
+    width: 203px;
+    height: 31px;
+
+    font-family: DM Sans!important;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 31px;
+    align-items: center;
+
+    color: #201950;
+ }
+
+ .pes{
+
+    width: 83px;
+    height: 21px;
+
+    font-family: DM Sans;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 26px;
+
+    color: #575277!important;
+ }
+
+
+
+ .inpt{
+    width: 330px!important;
+height: 55px!important;
+outline: none!important;
+background: #DAE6FF!important;
+border-radius: 10px!important;
+border: none!important;
+Stroke: Solid
+rgba(80, 62, 157, 0.5)!important;
+ }
+
+
+.botao{
+
+    width: 120px;
+height: 35px;
+outline: none;
+/* azulfixe */
+background: linear-gradient(271.88deg, #3887FE 4.26%, #3BA0FF 51.37%, #5FB2FF 99.01%);
+
+ background: linear-gradient(27.24deg, #66A6FF 8.25%, #89F7FE 91.77%);
+/* background: linear-gradient(135.42deg, #17EAD9 0.72%, #6078EA 100%);
+ */
+/* efeito */
+border: none!important;
+box-shadow: 0px 4px 20px rgba(1, 143, 255, 0.15);
+border-radius: 8px;
+filter: drop-shadow(0px 4px 25px rgba(0, 0, 0, 0.25));
+}
+
+.entrar{
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 14px;
+line-height: 19px;
+
+align-items: center;
+
+color: #FFFFFF;
+}
+
+
+
+input::placeholder {
+   font-family: FontAwesome;
+   font-weight: normal;
+   font-size: 12px !important;
+
+
+   content:"\f002" im !important;
+   }
+/*
+   @media (min-width: 1199.98px) {
+
+    .inputfundo{
+       width: 430px;
+     height: 443px;
+
+    }
+    .inputfundo2{
+       width: 437.73px;
+     height: 486.74px;
+    }
+
+    input{
+       width: 451px;
+       height: 50px;
+    } */
+
+
+
+
+    body{
+        overflow-x: hidden;
+    }
+
+    /* dashboard */
+
+    .dash{
+        font-family: Overpass;
+font-style: normal;
+font-weight: 600;
+font-size: 18px;
+line-height: 150%;
+/* identical to box height, or 27px */
+
+
+/* Color / Primary 2 */
+
+color: #0A1A46;
+
+    }
+
+
+    .cardfixe{
+        height: 93px;
+        width: 228px;
+    background: #FFFFFF;
+border-radius: 8px;
+}
+
+.olho{
+    margin-left: 70px;
+}
+
+.assuntoletras{
+    font-family: Overpass;
+font-style: normal;
+font-weight: 800;
+font-size: 40px;
+line-height: 120%;
+/* identical to box height, or 48px */
+
+letter-spacing: -0.06em;
+
+/* Color / Text 1 */
+
+color: #363B64;
+}
+
+
+/* incoice */
+

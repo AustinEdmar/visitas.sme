@@ -1,0 +1,82 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class CreateUsersTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('users', function (Blueprint $table) {
+            $table->id();
+
+
+
+            $table->string('name');
+
+
+            $table->string('birthday')->nullable();
+            $table->string('image')->nullable();
+            /* $table->boolean('status')->default(1); */
+
+
+            $table->BigInteger('phone_number')->unique();
+
+
+            /* $table->foreignId('manage_subject_id')->constrained();
+            $table->foreignId('police_rank_id')->constrained();
+            $table->foreignId('level_id')->constrained();
+            $table->foreignId('directions_id')->constrained(); */
+
+            $table->unsignedBigInteger('police_rank_id');
+            $table->foreign('police_rank_id')->references('id')->on('police_ranks')->onDelete('cascade');
+
+            $table->unsignedBigInteger('level_id');
+            $table->foreign('level_id')->references('id')->on('levels')->onDelete('cascade');
+
+            $table->unsignedBigInteger('direction_id')->nullable();
+            $table->foreign('direction_id')->references('id')->on('directions')->onDelete('cascade');
+
+            $table->unsignedBigInteger('department_id')->nullable();
+            $table->foreign('department_id')->references('id')->on('departments')->onDelete('cascade');
+
+            $table->unsignedBigInteger('section_id')->nullable();
+            $table->foreign('section_id')->references('id')->on('sections')->onDelete('cascade');
+
+            $table->unsignedBigInteger('gender_id');
+            $table->foreign('gender_id')->references('id')->on('genders')->onDelete('cascade');
+
+            $table->unsignedBigInteger('status_id');
+            $table->foreign('status_id')->references('id')->on('statuses')->onDelete('cascade');
+
+            $table->unsignedBigInteger('group_id');
+            $table->foreign('group_id')->references('id')->on('groups')->onDelete('cascade');
+            
+            $table->unsignedBigInteger('floor_id');
+            $table->foreign('floor_id')->references('id')->on('floors')->onDelete('cascade');
+
+            $table->string('email')->unique();
+            $table->timestamp('email_verified_at')->nullable();
+            $table->string('password');
+            $table->rememberToken();
+            $table->timestamps();
+
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('users');
+    }
+}
