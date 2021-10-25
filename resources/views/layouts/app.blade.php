@@ -35,9 +35,10 @@
             <label for=""></label>
             <div class="d-flex justify-content-end mr-5">
                 <label class="text-white bold mr-3">Bemvindo de volta, <span class="">{{ Auth::user()->name }}</span></label>
-                <a href="{{ route('logout') }}" class="btn btn-danger" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                    <i class="fas fa-power-off"><span> Sair</span></i>
-                </a>
+                <form method="POST" action="{{ route('logout') }}">
+                  @csrf
+                  <button type="button" class="btn btn-primary">Sair</button>
+              </form>
             </div>
             @endif
             @yield('content')
