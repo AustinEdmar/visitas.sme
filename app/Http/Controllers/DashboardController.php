@@ -1477,6 +1477,12 @@ class DashboardController extends Controller
              // dd($manage_subjects);
             }
 
+            elseif(!isset($request->user_id)){
+                return redirect()->back();
+            }
+               //
+
+
             elseif(isset($request->datainicio)){
 
                 $manage_subjects = DB::table('manage_subjects')
@@ -1549,12 +1555,16 @@ class DashboardController extends Controller
 
             $hoje = Carbon::now()->format('d-m-Y');
 
-   // dd($manage_subjects);
+                   /*  if(!isset($manage_subjects)){
 
-            $pdf = PDF::loadView('dashboard.relatoriopdf', compact('manage_subjects','hoje'))->setPaper('a4', 'landscape');
-            return $pdf->stream('relatorio.pdf');
+                        return redirect()->back();
+                    } */
 
-               return view('dashboard.relatorio', compact('manage_subjects'));
+                    $pdf = PDF::loadView('dashboard.relatoriopdf', compact('manage_subjects','hoje'))->setPaper('a4', 'landscape');
+                    return $pdf->stream('relatorio.pdf');
+                    return view('dashboard.relatorio', compact('manage_subjects'));
+
+
 
             }
 

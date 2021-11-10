@@ -28,12 +28,15 @@ class PvcController extends Controller
 
          if($validator) {
             Pvc::create($request->all());
-            toastr()->success('Dado inserido com sucesso');
+            /* toastr()->success('Dado inserido com sucesso'); */
+            Toastr::success('Adicionado com sucesso :)','Sucesso');
          }
 
          return Redirect::to('cadastro/pvc/create');
     }
 
+
+    
     public function edit()
     {
 
@@ -44,7 +47,7 @@ class PvcController extends Controller
         $pvcs = Pvc::find($id);
 
         $pvcs->delete();
-        toastr()->error('Deletado com sucesso');
+        Toastr::success('deletado sucesso :)','Sucesso');
         return Redirect::to('cadastro/pvc/create');
 
     }

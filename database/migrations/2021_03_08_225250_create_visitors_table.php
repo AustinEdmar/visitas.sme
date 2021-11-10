@@ -24,8 +24,8 @@ class CreateVisitorsTable extends Migration
             $table->string('doc_number')->nullable();
             $table->string('doc_emition')->nullable();
 
-            $table->string('affiliation')->nullable();;
-            $table->BigInteger('phone_number')->unique();
+            $table->string('affiliation')->nullable();
+            $table->BigInteger('phone_number')->nullable();
 
            /*  $table->foreignId('nacionality_id')->constrained(); */
            $table->unsignedBigInteger('gender_id');

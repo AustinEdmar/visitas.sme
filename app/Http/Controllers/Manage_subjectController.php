@@ -187,7 +187,7 @@ class Manage_subjectController extends Controller
 
             Manage_subject::create($data);
             //Floor::create($request->all());
-            toastr()->success('Dado inserido com sucesso');
+            Toastr::success('Adicionado com sucesso :)','Sucesso');
          }
 
         return Redirect::to('cadastro/manage_subject/create');

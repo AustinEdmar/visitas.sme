@@ -64,7 +64,7 @@ class User extends Authenticatable
     {
         return $this->belongsTo(Group::class);
     }
-     public function users()
+     public function floor()
     {
         return $this->belongsTo(Floor::class);
     }

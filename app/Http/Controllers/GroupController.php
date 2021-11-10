@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use toastr;
 use App\Group;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class GroupController extends Controller
 {
@@ -14,7 +16,7 @@ class GroupController extends Controller
      */
     public function index()
     {
-        //
+
     }
 
     /**
@@ -24,7 +26,8 @@ class GroupController extends Controller
      */
     public function create()
     {
-        //
+        $groups = Group::Simplepaginate(3);
+        return view('cadastro.group_area.create', compact('groups'));
     }
 
     /**
@@ -35,7 +38,18 @@ class GroupController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+
+        $validator = $this->validate($request, [
+            'name' => 'required|unique:groups'
+         ]);
+
+         if($validator) {
+            Group::create($request->all());
+            toastr()->success('Dado inserido com sucesso');
+         }
+
+        return Redirect::to('cadastro/group/create');
     }
 
     /**
@@ -55,9 +69,12 @@ class GroupController extends Controller
      * @param  \App\Group  $group
      * @return \Illuminate\Http\Response
      */
-    public function edit(Group $group)
+    public function edit($id)
     {
-        //
+
+        $groups = Group::find($id);
+
+        return view('cadastro.group_area.edit', compact('groups'));
     }
 
     /**
@@ -67,9 +84,14 @@ class GroupController extends Controller
      * @param  \App\Group  $group
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Group $group)
+    public function update(Request $request, $id)
     {
-        //
+        
+
+        $group = Group::find($id);
+        $group->update($request->all());
+
+        return redirect()->route('group.create')->with('message', 'group actualizado');
     }
 
     /**
@@ -80,6 +102,16 @@ class GroupController extends Controller
      */
     public function destroy(Group $group)
     {
-        //
+
+    }
+
+    public function delete($id)
+    {
+        $groups = Group::find($id);
+
+        $groups->delete();
+        toastr()->error('Deletado com sucesso');
+        return Redirect::to('cadastro/group/create');
+
     }
 }

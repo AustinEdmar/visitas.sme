@@ -8,31 +8,9 @@
 <div class="m-4 ">
     <div class="container">
         <div class="">
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                  <li class="breadcrumb-item"><a href="{{url('/')}}">Home</a></li>
-                  <li class="breadcrumb-item"><a href="{{url('/cadastro/nacionality/create')}}">Nacionalidade</a></li>
-                  <li class="breadcrumb-item"><a href="{{url('/cadastro/gender/create')}}">genero</a></li>
-                  <li class="breadcrumb-item"><a href="{{url('/cadastro/rank/create')}}">Patente</a></li>
-                  <li class="breadcrumb-item"><a href="{{url('/cadastro/pvc/create')}}">Pvc</a></li>
-                  <li class="breadcrumb-item"><a href="{{url('/cadastro/visitor/create')}}">Utente</a></li>
-                  <li class="breadcrumb-item"><a href="{{url('/cadastro/section/create')}}">section</a></li>
-                  <li class="breadcrumb-item"><a href="{{url('/cadastro/visitor/create')}}">visitor</a></li>
-                  <li class="breadcrumb-item"><a href="{{url('/cadastro/direction/create')}}">direccao</a></li>
-                  <li class="breadcrumb-item"><a href="{{url('/cadastro/department/create')}}">departamento</a></li>
-                  <li class="breadcrumb-item"><a href="{{url('/cadastro/user/create')}}">Usuarios</a></li>
-                  <li class="breadcrumb-item"><a href="{{url('/cadastro/status/create')}}">Status</a></li>
-                  <li class="breadcrumb-item"><a href="{{url('/cadastro/progress/create')}}">Progresso</a></li>
-                  <li class="breadcrumb-item"><a href="{{url('/cadastro/document/create')}}">documento</a></li>
-                  <li class="breadcrumb-item"><a href="{{url('/cadastro/permission/create')}}">permissoes</a></li>
-                  <li class="breadcrumb-item"><a href="{{url('/cadastro/level/create')}}">permissoes</a></li>
+            @include('cadastro.partials.ol_partials')
 
-                  <li class="breadcrumb-item"><a href="{{url('/cadastro/manage_subject/create')}}">Motivo</a></li>
-                  <li class="breadcrumb-item"><a href="{{url('/relatorio')}}">Relatorio</a></li>
-                  <li class="breadcrumb-item"><a href="{{url('/relatorio/pdf')}}">pdf</a></li>
-                  <li class="breadcrumb-item active" aria-current="page"></li>
-                </ol>
-              </nav>
+
 
 
 
@@ -68,12 +46,11 @@
                             @endif
 
 
-
                                                 <div class="">
                                                     <div class="row">
                                                       <div class="col-sm">
                                                         <label  >Nome do Usuario</label>
-                                                        <input type="text" class="form-control " name="name" placeholder="Escreva o nome" value="{{('Austin Edmar')}}" autocomplete="off">
+                                                        <input type="text" class="form-control " name="name" placeholder="Escreva o nome" value="" autocomplete="off">
 
                                                         @error('name')
                                                             <span class="text-danger">{{$message}}</span>
@@ -87,7 +64,7 @@
                                                             @foreach ($genders as $gender )
                                                             <span>
                                                                 <label >
-                                                                    <input type="radio" name="gender_id" id="" class="" value="{{$gender->id}}">
+                                                                    <input type="radio" name="gender_id" id="" class="" value="">
                                                                     <span>{{$gender->name}}</span>
 
                                                                     @error('gender_id')
@@ -100,26 +77,25 @@
                                                         </div>
                                                       </div>
                                                       <div class="col-sm">
-                                                        <label >Data de nascimento</label>
-                                                        <input type="" class="form-control" name="birthday" placeholder="Escreva a data de aniversario" value="{{('17/08/1989')}}">
+                                                        <label >Data de Nascimento</label>
+                                                        <input type="" class="form-control" name="birthday" placeholder="Escreva a data de aniversario" value="">
 
                                                       </div>
                                                       <div class="col-sm">
-                                                        <label >Nivel status</label>
-                                                        <select name="status_id" id="" class="form-control" value="{{old('status_id')}}">
-                                                            <option value="status_id" disabled selected>
-                                                                Selecione o status
-                                                            </option>
-                                                            @foreach ($status as $statu )
-                                                                    <option value="{{$statu->id}}">{{$statu->name}}</option>
+                                                        <label >Nivel Status</label>
+                                                        <select name="status_id" id="" class="form-control" value=" ">
+                                                            @foreach(App\Status::where('name','=','Activo')->get() as $statu)
+
+                                                         <option value="{{$statu->id}}">{{$statu->name}}</option>
                                                             @endforeach
+
                                                    </select>
 
                                                       </div>
                                                       <div class="col-sm">
                                                         <label >Nivel de acesso</label>
                                                         <select name="level_id" id="" class="form-control" value="{{old('level_id')}}">
-                                                            <option value="" disabled selected>
+                                                            <option value="">
                                                                 Selecione o Nivel de Acesso
                                                             </option>
                                                             @foreach ($levels as $level )
@@ -131,24 +107,24 @@
                                                     </div>
                                                     <div class="row">
                                                         <div class="col-sm">
-                                                            <label >Insira a foto</label>
+                                                            <label >Insira a Foto</label>
                                                             <input type="file" class="form-control" name="image" placeholder="insira a foto" value="{{old('image')}}">
                                                         </div>
 
 
                                                         <div class="col-sm">
                                                             <label >Telefone</label>
-                                                            <input type="number" class="form-control" name="phone_number" placeholder="Escreva o celular"" value="{{('923851259')}}">
+                                                            <input type="number" class="form-control" name="phone_number" placeholder="Escreva o celular" value=" ">
                                                         </div>
                                                         <div class="col-sm">
                                                             <label >Email</label>
-                                                            <input type="email" class="form-control" name="email" placeholder="Escreva o celular"" value="{{('domingosmussumar@gmail.com')}}">
+                                                            <input type="email" class="form-control" name="email" placeholder="Escreva o celular" value="">
                                                         </div>
                                                         <div class="col-sm">
                                                             <label >Andar</label>
                                                             <select name="floor_id" id="" class="form-control" value="{{old('floor_id')}}">
-                                                                <option value="" disabled selected>
-                                                                    Selecione o andar
+                                                                <option value="">
+                                                                    Selecione o Andar
                                                                 </option>
                                                                 @foreach ($floors as $floor )
                                                                         <option value="{{$floor->id}}">{{$floor->name}}</option>
@@ -163,8 +139,8 @@
                                                         <div class="col-sm">
                                                             <label >Patente</label>
                                                             <select name="police_rank_id" id="" class="form-control" value="{{old('police_rank_id')}}">
-                                                                <option value="" disabled selected>
-                                                                    Selecione a patente
+                                                                <option value="">
+                                                                    Selecione a Patente
                                                                 </option>
                                                                 @foreach ($police_ranks as $police_rank )
                                                                         <option value="{{$police_rank->id}}">{{$police_rank->name}}</option>
@@ -174,12 +150,12 @@
 
                                                         <div class="col-sm">
                                                             <label >Senha</label>
-                                                            <input type="password" class="form-control" name="password" placeholder="Escreva a senha"" value="{{('923.eddy')}}">
+                                                            <input type="password" class="form-control" name="password" placeholder="Escreva a senha" value=" ">
                                                         </div>
 
                                                         <div class="col-sm">
                                                             <label > Repetir a Senha</label>
-                                                            <input type="password" class="form-control" name="password_confirmation" placeholder="Escreva a senha"" value="{{('923.eddy')}}">
+                                                            <input type="password" class="form-control" name="password_confirmation" placeholder="Escreva a senha" value="">
                                                         </div>
 
                                                     </div>
@@ -187,10 +163,10 @@
                                                     <div class="row">
 
                                                         <div class="col-sm">
-                                                            <label >Direccao</label>
+                                                            <label >Direcção</label>
                                                             <select name="direction_id" id="" class="form-control" value="{{old('direction_id')}}">
-                                                                <option value="" disabled selected>
-                                                                    Selecione a direccao
+                                                                <option value="">
+                                                                    Selecione a Direcção
                                                                 </option>
                                                                 @foreach ($directions as $direction )
                                                                         <option value="{{$direction->id}}">{{$direction->name}}</option>
@@ -200,8 +176,8 @@
                                                         <div class="col-sm">
                                                             <label >Departamento</label>
                                                             <select name="department_id" id="" class="form-control" value="{{old('departments_id')}}">
-                                                                <option value="" disabled selected>
-                                                                    Selecione o departamento
+                                                                <option value="">
+                                                                    Selecione o Departamento
                                                                 </option>
                                                                 @foreach ($departments as $department )
                                                                         <option value="{{$department->id}}">{{$department->name}}</option>
@@ -210,10 +186,10 @@
                                                         </div>
 
                                                         <div class="col-sm">
-                                                            <label >Seccao</label>
+                                                            <label >Secção</label>
                                                             <select name="section_id" id="" class="form-control" value="{{old('section_id')}}">
-                                                                <option value="" disabled selected>
-                                                                    Selecione a seccao
+                                                                <option value="">
+                                                                    Selecione a Secção
                                                                 </option>
                                                                 @foreach ($sections as $section )
                                                                         <option value="{{$section->id}}">{{$section->name}}</option>
@@ -222,10 +198,10 @@
                                                         </div>
 
                                                         <div class="col-sm">
-                                                            <label >Grupo pertencente</label>
+                                                            <label >Grupo Pertencente / Direcção</label>
                                                             <select name="group_id" id="" class="form-control" value="{{old('group_id')}}">
-                                                                <option value="" disabled selected>
-                                                                    Selecione o grupo Area o qual pertence
+                                                                <option value="">
+                                                                    Selecione a direcção o qual Pertence
                                                                 </option>
                                                                 @foreach ($groups as $group )
                                                                         <option value="{{$group->id}}">{{$group->name}}</option>
@@ -262,16 +238,6 @@
                         </div>
                     </div>
 
-              {{--
-
-
-
-
-
-
-
-                --}}
-
         </div>
 
 
@@ -283,7 +249,7 @@
                 <div class="card-header">
                     <div class="row">
 
-                            <h4>Lista documentos</h4>
+                            <h4>Listar Usuarios</h4>
 
                     </div>
                 </div>
@@ -297,14 +263,13 @@
                                     <tr>
                                       <th scope="col">ID</th>
                                       <th scope="col">Nome</th>
-                                      <th scope="col">Genero</th>
-                                      <th scope="col">Data Nascimento</th>
+
                                      <th scope="col">Level</th>
                                      <th scope="col">image</th>
 
                                       <th scope="col">Telefone</th>
                                       <th scope="col">Grupo</th>
-                                      <th scope="col">Patente</th>
+
 
 
                                       <th scope="col">Direccao</th>
@@ -318,18 +283,20 @@
                                   </thead>
                                   <tbody>
 
-                                     @foreach($users as $user)
+                                     @foreach($users as $key => $user)
                                     <tr>
-                                       <th scope="row$">{{$user->id}}</th>
+                                       <th scope="row$">{{$key+1}}</th>
                                        <td>{{$user->name}}</td>
-                                       <td>{{$user->gender->name}}</td>
-                                       <td>{{$user->birthday}}</td>
+
                                        <td>{{$user->level->name ??''}}</td>
-                                      <td><img src="{{ asset('user')}}/{{$user->image}}" height="40px" width="60px"></td>
+                                      <td><img src="/image/{{ $user->image }}" height="40px" width="60px"></td>
+
+                                     {{--  <td><img src="{{ asset('user')}}/{{$user->image}}" height="40px" width="60px"></td> --}}
+
                                        <td>{{$user->phone_number}}</td>
                                       <td>{{$user->group->name ??''}}</td>
 
-                                       <td>{{$user->police_rank->name}}</td>
+
 
 
                                        <td>{{$user->direction->name ??''}}</td>
@@ -340,30 +307,32 @@
 
                                        <td>
 
-                                       <div class="mt-1">
+                                       <div class="">
                                          @if ($user->status->name == 'Activo')
-                                        <span class="alert alert-success ">Activo</span>
+                                        <span class="btn btn-success ">Activo</span>
                                         @elseif($user->status->name == 'Inactivo')
-                                        <span class="alert alert-danger">Inactivo</span>
+                                        <span class="btn btn-danger" >Inactivo</span>
 
                                         @endif
                                        </div>
                                     </td>
 
+                                    <td>
+                                         <a type="" href="{{route('user.show', $user->id)}}" class="btn btn-warning mb-3" ><i class="fas fa-eye"></i></a>
 
-                                       <td>
+                                         <td>
 
-                                            <a href="#" data-toggle="modal" id="{{ $user->id }}" data-target=".bd-example-modal" onclick="userView(this.id)">
-                                                <i class="fas fa-edit"></i>
-                                            </a>
+
+                                            <td>
+                                                <a href="{{route('user.edit', $user->id)}}" class="btn btn-warning"><i class="fas fa-edit"></i></a>
+                                            </td>
 
 
                                        </td>
 
 
                                        <td>
-
-                                            <a href="{{-- {{route('user.delete', $user->id)}}  --}}"
+                                            <a href=" {{route('user.delete', $user->id)}} "
                                                 onclick="return confirm('Tens a certeza que pretendes apagar')"
                                                 ><i class="fas fa-trash btn btn-danger"></i></a>
                                          </td>
@@ -393,29 +362,11 @@
 </div>
 
 
-{{-- modal edit --}}
 
-<!-- Modal -->
-<div class="modal fade bd-example-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          ...
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
-      </div>
-    </div>
-  </div>
+
 
 
 @endsection
+
+
 

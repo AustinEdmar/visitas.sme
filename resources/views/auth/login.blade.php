@@ -1,11 +1,17 @@
 
 @extends('layouts.app')
-@laravelPWA
+
 @section('content')
+{{-- @php
+    header("refresh: 3");
+
+    /* echo date('H:i:s Y-m-d'); */
+
+@endphp --}}
 
 <div class="row ">
-    <div class="col-md-4">
-        <div class="margem">
+    <div class="col-md-2">
+        <div class="">
 
          <a href="{{url('/')}}" >
             <img src="{{asset('assets/img/logo.svg')}}" >
@@ -13,22 +19,22 @@
         </div>
     </div>
 
-    <div class="col-md-8 mt-3 ">
+    <div class="col-md-9 mt-3 ">
 
 
-         <div class="deus">
+         <div class="container-info-login">
 
              <div class="">
-                 <div >
-                     <div class="cfunciona text-center ">
-                      <p class="infoss">
+
+                     <div class="funciona  ">
+                      <p class="">
                          como funciona
 
                       </p>
                      </div>
-                 </div>
+
                  <div class="svisitas">
-                     <p class="infos">
+                     <p class="">
                          Sistema de visitas
 
                       </p>
@@ -40,13 +46,9 @@
 
                  </span>
 
-             </div>
+                  <div class=" ">
 
-
-
-               <div class=" d-flex justify-content-center ">
-
-                     <div class="eu">
+                     <div class="">
                          <div class="inputfundo">
                              <div class="inputfundo2  " style="background-image: url('{{ asset('assets/img/Vector3.png')}}'); background-size: cover;background-repeat: no-repeat;">
                                <div class="container ">
@@ -60,6 +62,7 @@
                                         <form method="POST" action="{{ route('login') }}">
                                             @csrf
                                                <div class="form-group">
+                                                   
 
                                                     <div>
                                                        <p class="pes">Email</p>
@@ -103,6 +106,12 @@
                      </div>
 
                </div>
+
+             </div>
+
+
+
+
          </div>
 
 

@@ -75,7 +75,7 @@ html, body{
 }
 
 .bg-purple{
-    background: url(http://salehriaz.com/404Page/img/bg_purple.png);
+    background: url(https://images.unsplash.com/photo-1502481851512-e9e2529bfbf9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1769&q=80);
     background-repeat: repeat-x;
     background-size: cover;
     background-position: left top;
@@ -330,10 +330,15 @@ DRIBBBLE: https://dribbble.com/shots/4330167-404-Page-Lost-In-Space
             </div>
 
         </div> --}}
+
+
         <div class="central-body">
             <h1 class="text-white Bold" style="font-weight: 900; font-size:600%">404</h1>
             <span class="text-white" style="font-size: 200%">ocorreu um erro, talvez não tenhas permissão de acesso a esta página</span>
-            <a href="{{route('manage_subject.create')}}" class="btn-go-home" >ir a assuntos</a>
+            <div class="d-inline">
+                <a href="{{route('manage_subject.create')}}" class="btn-go-home" >ir a assuntos</a>
+            <a href="{{route('area.index')}}" class="btn-go-home" >ir a area</a>
+            </div>
         </div>
 
         <div class="objects">

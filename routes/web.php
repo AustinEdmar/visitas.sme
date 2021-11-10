@@ -9,19 +9,21 @@ use Illuminate\Support\Facades\Route;
  Route::view('noacesso','noacesso');
 
  Route::group(['middleware' =>'auth'], function(){
+    Route::get('/user/perfil/{id}', 'UserController@perfil')->name('user.perfil');
 
     Route::get('/listar', [App\Http\Controllers\DashboardController::class, 'listar']);
     Route::get('/relatorio', [App\Http\Controllers\DashboardController::class, 'relatorio']);
-    Route::get('/relatorio/search', [App\Http\Controllers\DashboardController::class, 'search'])->name('relatorio.search');
+    Route::any('/relatorio/search', [App\Http\Controllers\DashboardController::class, 'search'])->name('relatorio.search');
 
-    Route::get('/relatorio/searchdupla', [App\Http\Controllers\DashboardController::class, 'searchdupla'])->name('relatorio.searchDupla');
+// Route::get('/relatorio/searchdupla', [App\Http\Controllers\DashboardController::class, 'searchdupla'])->name('relatorio.searchDupla');
     Route::get('/relatorio/pdf', [App\Http\Controllers\DashboardController::class, 'listarpdf']);
 
-    Route::group(['middleware'=>['protectedPageUserAdmin']],function(){
-
+     Route::group(['middleware'=>['protectedPageUserAdmin']],function(){
 
         Route::resource('area', 'UserGoupController');
     });
+
+  /*    */
 
     Route::group(['middleware'=>['protectedPage']],function(){
         Route::get('/', [App\Http\Controllers\DashboardController::class, 'index']);
@@ -31,10 +33,10 @@ use Illuminate\Support\Facades\Route;
     Route::prefix('cadastro')->group(function () {
 
         Route::group(['middleware'=>['protectedPage']],function(){
-            Route::resource('nacionality', 'NacionalityController');
 
-            Route::get('nacionality/delete/{id}', 'NacionalityController@destroy')->name('nacionality.destroy');
-
+            /* group */
+            Route::resource('group', 'GroupController');
+            Route::get('/group/delete/{id}', 'GroupController@delete')->name('group.delete');
 
               /* documents */
             Route::resource('document', 'DocumentController');
@@ -75,11 +77,6 @@ use Illuminate\Support\Facades\Route;
             Route::resource('direction', 'DirectionController');
             Route::get('direction/delete/{id}', 'DirectionController@delete')->name('direction.delete');
 
-        /* visitor */
-            Route::resource('visitor', 'VisitorController');
-            Route::get('visitor/delete/{id}', 'VisitorController@delete')->name('visitor.delete');
-
-            Route::post('visitor/consulta', 'VisitorController@consulta')->name('visitor.consulta');
 
         /* permission */
             Route::resource('permission', 'PermissionController');
@@ -88,17 +85,32 @@ use Illuminate\Support\Facades\Route;
             Route::resource('user', 'UserController');
             Route::get('user/delete/{id}', 'UserController@delete')->name('user.delete');
 
-            Route::get('user/view/{id}', 'UserController@userView')->name('user.view');
+            /* Route::get('user/perfil/{id}', 'UserController@perfil')->name('user.perfil'); */
 
-            Route::resource('floor', 'floorController');
-            Route::get('floor/delete/{id}', 'floorController@delete')->name('floor.delete');
+           /*  Route::get('user/view/{id}', 'UserController@userView')->name('user.view'); */
+
+            Route::resource('floor', 'FloorController');
+            Route::get('floor/delete/{id}', 'FloorController@delete')->name('floor.delete');
 
              });
 
             Route::group(['middleware'=>['protectedPageUser']],function(){
+                /* visitor */
+            Route::resource('visitor', 'VisitorController');
+            Route::get('visitor/delete/{id}', 'VisitorController@delete')->name('visitor.delete');
+
+            Route::post('visitor/consulta', 'VisitorController@consulta')->name('visitor.consulta');
+
+
             Route::resource('manage_subject', 'Manage_subjectController');
 
             Route::get('manage_subject/delete/{id}', [App\Http\Controllers\Manage_subjectController::class, 'delete'])->name('manage_subject.delete');
+
+            /* nacionality */
+
+            Route::resource('nacionality', 'NacionalityController');
+
+            Route::get('nacionality/delete/{id}', 'NacionalityController@destroy')->name('nacionality.destroy');
         });
 
         /* search */

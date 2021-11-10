@@ -8,7 +8,6 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet">
 
 
-
  <title>Relatorio</title>
 
     <style>
@@ -38,6 +37,11 @@
 .tabelamargin{
    margin: 0 70px;
 
+}
+
+.info-header{
+    justify-content: center;
+    text-align: center;
 }
 
    .total{
@@ -161,7 +165,7 @@ page-break-before: always;
 </head>
 <body background= "{{ public_path('assets/img/invoice.jpg') }}">
 
-  <div class="">
+  <div class="info-header">
       <div class="insiginia">
           <img src="{{ public_path('assets/img/insignia.png') }}" alt="" style="width: 60px; height:60px;">
       </div>
@@ -230,7 +234,7 @@ page-break-before: always;
   </div>
     <div class="tabelamargin ">
         <div>
-                <span>Resultados da pesquisa</span>
+                <span>Resultados da Pesquisa</span>
         </div>
         <div ">
 
@@ -291,7 +295,7 @@ page-break-before: always;
                           @if($manage_subject->created_at != $manage_subject->updated_at)
                          <td class="">{{$manage_subject->updated_at ??''}}</td>
                          @else
-                         <td class="text-white "><span class="bg-danger w-100"> Vitante sem saida</span></td>
+                         <td class="text-white "><span class="bg-danger w-100"> Vitante Sem Saída</span></td>
 
                           @endif
 

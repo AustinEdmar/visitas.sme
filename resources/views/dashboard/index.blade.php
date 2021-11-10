@@ -11,21 +11,21 @@
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="{{url('/')}}">Home</a></li>
           <li class="breadcrumb-item"><a href="{{url('/cadastro/nacionality/create')}}">Nacionalidade</a></li>
-          <li class="breadcrumb-item"><a href="{{url('/cadastro/gender/create')}}">genero</a></li>
-          <li class="breadcrumb-item"><a href="{{url('/cadastro/manage_subject/create')}}">Motivo</a></li>
+          <li class="breadcrumb-item"><a href="{{url('/cadastro/gender/create')}}">Genero</a></li>
+
           <li class="breadcrumb-item"><a href="{{url('/cadastro/rank/create')}}">Patente</a></li>
           <li class="breadcrumb-item"><a href="{{url('/cadastro/pvc/create')}}">Pvc</a></li>
-          <li class="breadcrumb-item"><a href="{{url('/cadastro/visitor/create')}}">Utente</a></li>
-          <li class="breadcrumb-item"><a href="{{url('/cadastro/section/create')}}">section</a></li>
-          <li class="breadcrumb-item"><a href="{{url('/cadastro/visitor/create')}}">visitor</a></li>
-          <li class="breadcrumb-item"><a href="{{url('/cadastro/direction/create')}}">direccao</a></li>
-          <li class="breadcrumb-item"><a href="{{url('/cadastro/department/create')}}">departamento</a></li>
+
+          <li class="breadcrumb-item"><a href="{{url('/cadastro/section/create')}}">Secção</a></li>
+          <li class="breadcrumb-item"><a href="{{url('/cadastro/visitor/create')}}">Visitante</a></li>
+          <li class="breadcrumb-item"><a href="{{url('/cadastro/direction/create')}}">Direcção</a></li>
+          <li class="breadcrumb-item"><a href="{{url('/cadastro/department/create')}}">Departamento</a></li>
           <li class="breadcrumb-item"><a href="{{url('/cadastro/user/create')}}">Usuarios</a></li>
           <li class="breadcrumb-item"><a href="{{url('/cadastro/status/create')}}">Status</a></li>
           <li class="breadcrumb-item"><a href="{{url('/cadastro/progress/create')}}">Progresso</a></li>
-          <li class="breadcrumb-item"><a href="{{url('/cadastro/manage_subject/create')}}">motive</a></li>
-          <li class="breadcrumb-item"><a href="{{url('/cadastro/permissions/create')}}">permissions</a></li>
-          <li class="breadcrumb-item"><a href="{{url('/relatorio')}}">relatorio</a></li>
+          <li class="breadcrumb-item"><a href="{{url('/cadastro/manage_subject/create')}}">Assunto</a></li>
+          <li class="breadcrumb-item"><a href="{{url('/cadastro/permissions/create')}}">Permissões</a></li>
+          <li class="breadcrumb-item"><a href="{{url('/relatorio')}}">Relatorios</a></li>
           <li class="breadcrumb-item active" aria-current="page"></li>
         </ol>
       </nav>
@@ -132,13 +132,13 @@
         <div class="col-md-3">
             <div class="small-box  cardfixe">
                 <div class="inner">
-                    <span class="dash mt-5 ml-3">Funcionarios</span>
+                    <span class="dash mt-5 ml-3">Funcionários</span>
                     <div class="icon d-inline olho ">
 
                         <i class="far fa-fw fa-eye"></i>
                     </div>
                     <div class="ml-4">
-                       <span> Total de Funcionarios <span class="assuntoletras">
+                       <span> Total de Funcionários <span class="assuntoletras">
                         {{$users}}
                            </span>
                         </span>
@@ -164,23 +164,23 @@
               <thead>
                 <tr>
                   <th scope="col" class="text-white">ID</th>
-                  <th scope="col" class="text-white">Objecto deixado</th>
+                  <th scope="col" class="text-white">Objecto Deixado</th>
 
                   <th scope="col" class="text-white">Motivo</th>
                   <th scope="col" class="text-white">Pvc</th>
 
 
 
-                  <th scope="col" class="text-white">Utente</th>
+                  <th scope="col" class="text-white">Visitante</th>
                   <th scope="col" class="text-white">Nacionalidade</th>
-                  <th scope="col" class="text-white">Funcionario a contactar</th>
+                  <th scope="col" class="text-white">Funcionario a Contactar</th>
                   <th scope="col" class="text-white">Operador</th>
 
 
-                  <th scope="col" class="text-white" class="text-white">Hora entrada</th>
-                  <th scope="col" class="text-white" class="text-white">Hora saida</th>
+                  <th scope="col" class="text-white" class="text-white">Hora Entrada</th>
+                  <th scope="col" class="text-white" class="text-white">Hora Saida</th>
 
-                    <th scope="col" class="text-white">andamento</th>
+                    <th scope="col" class="text-white">Andamento</th>
                   <th scope="col" class="text-white ml-5">Acções</th>
                 </tr>
 
@@ -212,7 +212,7 @@
                    @if ($dateInterval->created_at != $dateInterval->updated_at)
                    <td class="text-white">{{$dateInterval->updated_at->diffForHumans() ??''}}</td>
                    @else
-                   <td class="text-white "><span class="bg-danger">Visitante sem saida</span></td>
+                   <td class="text-white "><span class="bg-danger">Visitante Sem Saída</span></td>
 
                    @endif
 

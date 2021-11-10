@@ -49,6 +49,21 @@ class DirectionController extends Controller
             toastr()->success('Dado inserido com sucesso');
          }
 
+         /* 
+            try{
+            if($validator) {
+                Direction::create($request->all());
+                toastr()->success('Dado inserido com sucesso');
+             }
+             return Redirect::to('cadastro/direction/create');
+
+         }catch(\Exception $e){
+            toastr()->success('nao foi desta');
+             return redirect()->back()->withError($e->getMessage());
+         }
+         
+         */
+
 
         return Redirect::to('cadastro/direction/create');
     }

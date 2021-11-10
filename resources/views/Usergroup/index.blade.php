@@ -11,25 +11,8 @@
 
 <div class="container">
     <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="{{url('/')}}">Home</a></li>
-          <li class="breadcrumb-item"><a href="{{url('/cadastro/nacionality/create')}}">Nacionalidade</a></li>
-          <li class="breadcrumb-item"><a href="{{url('/cadastro/gender/create')}}">genero</a></li>
-          <li class="breadcrumb-item"><a href="{{url('/cadastro/nacionality/create')}}">Nacionalidade</a></li>
-          <li class="breadcrumb-item"><a href="{{url('/cadastro/rank/create')}}">Patente</a></li>
-          <li class="breadcrumb-item"><a href="{{url('/cadastro/pvc/create')}}">Pvc</a></li>
-          <li class="breadcrumb-item"><a href="{{url('/cadastro/visitor/create')}}">Utente</a></li>
-          <li class="breadcrumb-item"><a href="{{url('/cadastro/section/create')}}">section</a></li>
-          <li class="breadcrumb-item"><a href="{{url('/cadastro/visitor/create')}}">visitor</a></li>
-          <li class="breadcrumb-item"><a href="{{url('/cadastro/direction/create')}}">direccao</a></li>
-          <li class="breadcrumb-item"><a href="{{url('/cadastro/department/create')}}">departamento</a></li>
-          <li class="breadcrumb-item"><a href="{{url('/cadastro/user/create')}}">Usuarios</a></li>
-          <li class="breadcrumb-item"><a href="{{url('/cadastro/status/create')}}">Status</a></li>
-          <li class="breadcrumb-item"><a href="{{url('/cadastro/progress/create')}}">Progresso</a></li>
-          <li class="breadcrumb-item"><a href="{{url('/cadastro/permissions/create')}}">permissions</a></li>
-          <li class="breadcrumb-item"><a href="{{url('/relatorio')}}">relatorio</a></li>
-          <li class="breadcrumb-item active" aria-current="page"></li>
-        </ol>
+
+        @include('cadastro.partials.ol_partials')
       </nav>
 
 
@@ -87,7 +70,7 @@
 
 
 
-                   <td class="text-white">{{$manage_subject->created_at}}</td>
+                   <td class="text-white">{{ \Carbon\Carbon::parse($manage_subject->created_at)->diffForHumans() }}</td>
 
 
                     <td>

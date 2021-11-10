@@ -2,9 +2,12 @@
 
 return [
     'options' => [
-        "closeButton" => false,
+        "closeButton" => true,
+        "background-color" => "purple",
+        "content" => "\f00C",
         "debug" => false,
-        "newestOnTop" => false,
+        "newestOnTop" => true,
+        'background_color' => '#ee9b00',
         "progressBar" => true,
         "positionClass" => "toast-top-right",
         "preventDuplicates" => false,

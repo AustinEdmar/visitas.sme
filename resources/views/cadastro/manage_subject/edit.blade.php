@@ -8,6 +8,16 @@
 
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{{url('/cadastro/visitor/create')}}" >Voltar A Visitas</a></li>
+
+
+                  <li class="breadcrumb-item"><a href="{{url('/cadastro/manage_subject/create')}}" >Cadastrar Assunto</a></li>
+
+                @if ((auth()->user()->level->permission->id  != '4'))
+
+
+
+
                   <li class="breadcrumb-item"><a href="{{url('/')}}">Home</a></li>
                   <li class="breadcrumb-item"><a href="{{url('/cadastro/nacionality/create')}}">Nacionalidade</a></li>
                   <li class="breadcrumb-item"><a href="{{url('/cadastro/gender/create')}}">genero</a></li>
@@ -22,9 +32,11 @@
                   <li class="breadcrumb-item"><a href="{{url('/cadastro/user/create')}}">Usuarios</a></li>
                   <li class="breadcrumb-item"><a href="{{url('/cadastro/status/create')}}">Status</a></li>
                   <li class="breadcrumb-item"><a href="{{url('/cadastro/progress/create')}}">Progresso</a></li>
-                  <li class="breadcrumb-item"><a href="{{url('/cadastro/manage_subject/create')}}">motivo</a></li>
-                  <li class="breadcrumb-item"><a href="{{url('/cadastro/manage_subject/show')}}">motivoAdminAprove</a></li>
+
+
                   <li class="breadcrumb-item active" aria-current="page"></li>
+                  @endif
+
                 </ol>
               </nav>
 
@@ -33,13 +45,14 @@
 
                     <form action="{{route('manage_subject.update', $manage_subjects->id )}}" method="POST" enctype="multipart/form-data" >
                         @csrf
-                     @method('PUT')
+                        @method('PUT')
+
                         <div class="card text-center">
                             <div class="card-header">
                               Gerenciar as visitas
                             </div>
                             <div class="card-body">
-                              <h5 class="card-title">Dados da visita do utente</h5>
+                              <h5 class="card-title">DADOS DA VISITA DO UTENTE</h5>
 
                               <div class="row">
                                 <div class="col">
@@ -48,32 +61,39 @@
 
                                   </div>
                                   <div class="col">
-                                    <label for="" class="d-inline-block">Data de entrada</label><br>
+                                    <label for="" class="d-inline-block">Data de Entrada</label><br>
                                     {{$manage_subjects->created_at}}
 
                                   </div>
 
                                   <div class="col">
-                                      <label >nome do utente</label><br>
+                                      <label >Nome do Utente</label><br>
                                    {{$manage_subjects->visitor->name}}
                                   </div>
                                   <div class="col">
                                       <label >Area Visitada</label><br>
-                                      {{$manage_subjects->user->department->name ??''}}
+                                        {{$manage_subjects->user->group->name ??''}}
+                                       
+
+                                  </div>
+                                  <div class="col">
+                                      <label >Extensão da Area</label><br>
+                                       {{$manage_subjects->user->direction->extention ??''}}
+                                       {{$manage_subjects->user->department->extention ??''}}
+                                       {{$manage_subjects->user->section->extention ??''}}
+
                                   </div>
 
                                  <div class="col">
                                     <label>Operador</label><br>
-                                    {{--  @if (Auth::user()->name == $manage_subjects->user->name)
-                                        {{$manage_subjects->user->name}}
-                                 @endif --}}
+
                                             {{$manage_subjects->by}}
                                   </div>
 
                               </div>
                               <hr>
 
-                            <label class="text-capitalize font-weight-bold">Andamento do pedido</label><br>
+                            <label class="text-capitalize font-weight-bold">Andamento do Pedido</label><br>
 
                             @if ($manage_subjects->progress->name == 'Pendente')
                             <span class="form-control bg-warning text-bold text-white"><span>🤔</span>
@@ -94,7 +114,7 @@
                                 @method('PATCH')
 
 
-                            <p>Deseja aprova-lo</p>
+                            <p>Deseja Aprova-lo</p>
                             @if(Auth::user()->level->name == 'superadmin'|| Auth::user()->level->name == 'useradmin')
 
 
@@ -115,7 +135,7 @@
                                 <button type="submit" class="btn btn-primary">Salvar</button>
                             </div>
                             @elseif (Auth::user()->level->name != 'superadmin'|| Auth::user()->level->name != 'useradmin')
-                                <h4>vc nao pode aprovar, solicite a area para aprovar</h4>
+                                <h4>Ola {{ Auth::user()->name }} não poderá aprovar, solicite a area para aprovar</h4>
                             @endif
 
 

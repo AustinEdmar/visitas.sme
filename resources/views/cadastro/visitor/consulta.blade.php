@@ -7,6 +7,7 @@
         <div class="">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
+                    @if (!auth()->user()->level->id == '4')
                   <li class="breadcrumb-item"><a href="{{url('/')}}">Home</a></li>
                   <li class="breadcrumb-item"><a href="{{url('/cadastro/nacionality/create')}}">Nacionalidade</a></li>
                   <li class="breadcrumb-item"><a href="{{url('/cadastro/gender/create')}}">genero</a></li>
@@ -14,7 +15,7 @@
                   <li class="breadcrumb-item"><a href="{{url('/cadastro/pvc/create')}}">Pvc</a></li>
                   <li class="breadcrumb-item"><a href="{{url('/cadastro/visitor/create')}}">Utente</a></li>
                   <li class="breadcrumb-item"><a href="{{url('/cadastro/section/create')}}">section</a></li>
-                  <li class="breadcrumb-item"><a href="{{url('/cadastro/visitor/create')}}">visitor</a></li>
+
                   <li class="breadcrumb-item"><a href="{{url('/cadastro/direction/create')}}">direccao</a></li>
                   <li class="breadcrumb-item"><a href="{{url('/cadastro/department/create')}}">departamento</a></li>
                   <li class="breadcrumb-item"><a href="{{url('/cadastro/user/create')}}">Usuarios</a></li>
@@ -28,11 +29,17 @@
                   <li class="breadcrumb-item"><a href="{{url('/relatorio')}}">Relatorio</a></li>
                   <li class="breadcrumb-item"><a href="{{url('/relatorio/pdf')}}">pdf</a></li>
                   <li class="breadcrumb-item active" aria-current="page"></li>
+                  @endif
+                  <li class="breadcrumb-item"><a href="{{url('/cadastro/visitor/create')}}" class="btn btn-success">Voltar</a></li>
                 </ol>
               </nav>
 
 
         <div class="modal-body">
+
+            @if (session('error'))
+                              <div class="alert alert-danger">{{ session('error') }}</div>
+                         @endif
                 <div>
 
                 <form action="{{route('visitor.store')}}" method="POST" enctype="multipart/form-data" >
@@ -171,7 +178,8 @@
                  </div>
 
                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+
+                    <a href="{{url('/cadastro/visitor/create')}}" class="btn btn-danger">Voltar</a>
                     <button type="submit" class="btn btn-warning">cadastrar</button>
                   </form>
                   </div>

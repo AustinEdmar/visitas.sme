@@ -40,14 +40,9 @@ class UserGoupController extends Controller
                     'users',
                     'visitors'));
 
-        //dd($manage_subjects);
 
-        //dd(auth()->user()->group_id);
 
-       /*  dd(auth()->user()->name);
-       tenho que criar uma coluna registrado por pra mandar na model visitas
-
-       */
+       
 
     }
 

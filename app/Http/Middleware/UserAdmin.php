@@ -17,7 +17,7 @@ class UserAdmin
     {
         if(auth()->user()->level->id == '3'){
             return $next($request);
-           //return redirect('/relatorio/area');
+           //return redirect('/area');
         }
 
         return redirect('noacesso');

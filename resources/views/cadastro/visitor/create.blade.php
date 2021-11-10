@@ -5,33 +5,7 @@
 <div class="container ">
     <div class="">
         <div class="">
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                  <li class="breadcrumb-item"><a href="{{url('/')}}">Home</a></li>
-                  <li class="breadcrumb-item"><a href="{{url('/cadastro/nacionality/create')}}">Nacionalidade</a></li>
-                  <li class="breadcrumb-item"><a href="{{url('/cadastro/gender/create')}}">genero</a></li>
-                  <li class="breadcrumb-item"><a href="{{url('/cadastro/rank/create')}}">Patente</a></li>
-                  <li class="breadcrumb-item"><a href="{{url('/cadastro/pvc/create')}}">Pvc</a></li>
-                  <li class="breadcrumb-item"><a href="{{url('/cadastro/visitor/create')}}">Utente</a></li>
-                  <li class="breadcrumb-item"><a href="{{url('/cadastro/section/create')}}">section</a></li>
-                  <li class="breadcrumb-item"><a href="{{url('/cadastro/visitor/create')}}">visitor</a></li>
-                  <li class="breadcrumb-item"><a href="{{url('/cadastro/direction/create')}}">direccao</a></li>
-                  <li class="breadcrumb-item"><a href="{{url('/cadastro/department/create')}}">departamento</a></li>
-                  <li class="breadcrumb-item"><a href="{{url('/cadastro/user/create')}}">Usuarios</a></li>
-                  <li class="breadcrumb-item"><a href="{{url('/cadastro/status/create')}}">Status</a></li>
-                  <li class="breadcrumb-item"><a href="{{url('/cadastro/progress/create')}}">Progresso</a></li>
-                  <li class="breadcrumb-item"><a href="{{url('/cadastro/document/create')}}">documento</a></li>
-                  <li class="breadcrumb-item"><a href="{{url('/cadastro/permission/create')}}">permissoes</a></li>
-                  <li class="breadcrumb-item"><a href="{{url('/cadastro/level/create')}}">permissoes</a></li>
-
-                  <li class="breadcrumb-item"><a href="{{url('/cadastro/manage_subject/create')}}">Motivo</a></li>
-                  <li class="breadcrumb-item"><a href="{{url('/relatorio')}}">Relatorio</a></li>
-                  <li class="breadcrumb-item"><a href="{{url('/relatorio/pdf')}}">pdf</a></li>
-                  <li class="breadcrumb-item active" aria-current="page"></li>
-                </ol>
-              </nav>
-              {{-- --}}
-
+            @include('cadastro.partials.ol_partials')
 
               <!-- Button trigger modal -->
 <button type="button" class="btn btn-warning mb-2" data-toggle="modal" data-target=".bd-example-modal-lg">
@@ -51,7 +25,7 @@
         <div class="modal-body">
                 <div>
 
-                  
+
 
                 <div class="col-sm-6">
                     <label >Buscar Identidade do Visitante</label>
@@ -71,7 +45,7 @@
                 <form action="{{route('visitor.store')}}" method="POST" enctype="multipart/form-data" >
                     @csrf
 
-                @if(!isset(auth()->user()->level->permission['name']['superadmin']['can-add']))
+              {{--   @if(!isset(auth()->user()->level->permission['name']['superadmin']['can-add'])) --}}
 
 
                  <div class=" form-group">
@@ -117,7 +91,7 @@
                             </div>
                           </div>
                           <div class="col-sm">
-                            <label >Data de nascimento</label>
+                            <label >Data de Nascimento</label>
                             <input type="date" class="form-control" name="birthday" placeholder="Escreva a data de aniversario" value="{{old('birthday')}}">
 
                           </div>
@@ -130,7 +104,7 @@
                                 <input type="file" class="form-control" name="image" placeholder="insira a foto" value="{{old('name')}}">
                             </div>
                             <div class="col-sm">
-                                <label >Filiacao</label>
+                                <label >Filiação</label>
                                 <input type="text" class="form-control" name="affiliation" placeholder="Escreva a filiacao"" value="{{old('affiliation')}}">
                             </div>
                             <div class="col-sm">
@@ -157,7 +131,7 @@
                                 <input type="text" class="form-control" name="doc_number" placeholder="Escreva o numero"" value="{{old('affiliation')}}">
                             </div>
                             <div class="col-sm">
-                                <label >Data de emissao do documento</label>
+                                <label >Data de Emissão do Documento</label>
                                 <input type="date" class="form-control" name="doc_emition" placeholder="seleccione a data"" value="{{old('phone_number')}}">
                             </div>
                         </div>
@@ -166,7 +140,7 @@
                     <label >Selecione a Nacionalidade</label>
                     <select name="nacionality_id" id="" class="form-control" value="{{old('nacionality_id')}}">
                             <option value="" disabled selected>
-                                Selecione o Pais
+                                Selecione o País
                             </option>
                             @foreach ($nacionalities as $nacionality )
                                     <option value="{{$nacionality->id}}">{{$nacionality->name}}</option>
@@ -177,14 +151,14 @@
 
                  <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                    <button type="submit" class="btn btn-warning">cadastrar</button>
+                    <button type="submit" class="btn btn-warning">Cadastrar</button>
                   </form>
                   </div>
              </div>
 
         </div>
 
-        @endif
+        {{-- @endif --}}
 
         </div>
 
@@ -205,7 +179,7 @@
                 <div class="card-header">
                     <div class="row">
 
-                            <h4>Lista documentos</h4>
+                            <h4>Listar Visitantes</h4>
 
                     </div>
                 </div>
@@ -223,9 +197,9 @@
                                       <th scope="col">Data Nascimento</th>
                                       <th scope="col">Tipo Doc</th>
                                       <th scope="col">Num. Doc</th>
-                                      <th scope="col">Doc Emissao</th>
+                                      <th scope="col">Doc Emissão</th>
                                       <th scope="col">Imagem</th>
-                                      <th scope="col">Filiacao</th>
+                                      <th scope="col">Filiação</th>
                                       <th scope="col">Telefone</th>
                                       <th scope="col">Nacionalidade</th>
 

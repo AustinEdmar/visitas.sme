@@ -27,6 +27,24 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+
+    public function show($id)
+    {
+
+        $where = array('id' => $id);
+
+
+		$users = User::where($where)->first();
+           // dd($users);
+
+
+        return view('cadastro.user.show', compact(
+            'users',
+
+
+        ));
+    }
     public function create()
     {
         $police_ranks = Police_rank::get();
@@ -39,7 +57,7 @@ class UserController extends Controller
         $groups = Group::get();
         $floors = Floor::get();
 
-        $users = User::Simplepaginate(3);
+        $users = User::latest()->paginate(5);
         return view('cadastro.user.create', compact(
             'users',
             'police_ranks',
@@ -61,6 +79,7 @@ class UserController extends Controller
       // dd($request->all());
 
         $data = $request->all();
+
         $this->validate($request, [
 
             /*
@@ -82,16 +101,28 @@ class UserController extends Controller
 
         ]);
 
-        if ($request->hasFile('image')) {
+        /* if ($request->hasFile('image')) {
             $image = $request->image->hashName();
             $request->image->move(public_path('user'), $image);
         } else {
             $image = 'avatar2.png';
+        } */
+
+
+
+        if ($image = $request->file('image')) {
+            $destinationPath = 'image/';
+            $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destinationPath, $profileImage);
+            $data['image'] = "$profileImage";
         }
 
 
 
-        $data['image'] = $request->image;
+
+
+
+        /* $data['image'] = $image; */
         $data['name'] = $request->name;
         $data['email'] = $request->email;
         $data['birthday'] = $request->birthday;
@@ -112,31 +143,93 @@ class UserController extends Controller
 
 
         User::create($data);
+        Toastr::success('Adicionado com sucesso :)','Sucesso');
         return Redirect::to('cadastro/user/create');
     }
 
     public function edit($id)
     {
+        $police_ranks = Police_rank::get();
+        $sections = Section::get();
+        $departments = Department::get();
+        $levels = Level::get();
+        $directions = Direction::get();
+        $genders = Gender::get();
+        $status = Status::get();
+        $groups = Group::get();
+        $floors = Floor::get();
+
         $where = array('id' => $id);
 		$users = User::where($where)->first();
-		return Response()->json($users);
 
-        dd($users);
-        /* $users = User::find($id);
-        return view('admin.user.create', compact('users')); */
+
+
+        return view('cadastro.user.edit', compact(
+            'users',
+            'police_ranks',
+            'levels',
+            'directions',
+            'genders',
+            'status',
+            'departments',
+            'groups',
+            'floors',
+            'sections'
+
+        ));
     }
 
     public function update(Request $request, $id)
     {
 
-
-
         $user = User::find($id);
-        $data = $request->all();
-        dd($data);
 
+        $data = $request->all();
+
+        $this->validate($request,[
+            'password' => 'confirmed',
+            ]);
+
+        /* if ($request->hasFile('image')) {
+            $image = $request->image->hashName();
+            $request->image->move(public_path('user'), $image);
+        } else {
+            $image = 'avatar2.png';
+        } */
+
+        if ($image = $request->file('image')) {
+            $destinationPath = 'image/';
+            $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destinationPath, $profileImage);
+            $data['image'] = "$profileImage";
+        }else{
+            unset($data['image']);
+        }
+
+
+
+        /* $data['image'] = $image; */
+        $data['name'] = $request->name;
+        $data['email'] = $request->email;
+        $data['birthday'] = $request->birthday;
+        $data['phone_number'] = $request->phone_number;
+        $data['police_rank_id'] = $request->police_rank_id;
+        $data['level_id'] = $request->level_id;
+        $data['direction_id'] = $request->direction_id;
+        $data['department_id'] = $request->department_id;
+        $data['section_id'] = $request->section_id;
+        $data['gender_id'] = $request->gender_id;
+        $data['status_id'] = $request->status_id;
+        $data['group_id'] = $request->group_id;
+        $data['floor_id'] = $request->floor_id;
+        $data['password'] = Hash::make($request->password);
+
+
+        //dd($data);
 
         $user->update($data);
+        Toastr::success('Actualizado com sucesso :)','Sucesso');
+
         return Redirect::to('cadastro/user/create')->with('message', 'Actualizado com sucesso');
     }
 
@@ -149,21 +242,24 @@ class UserController extends Controller
         return Redirect::to('cadastro/user/create');
     }
 
-    public function userView(Request $request, $id)
+
+
+    public function perfil($id)
     {
-        $user = User::findOrFail($id);
 
-        $name = $user->name;
 
-        $phone_number = $user->phone_number;
+        $where = array('id' => $id);
+		$users = User::where($where)->first();
 
-        return response()->json(array(
-                'user' => $user,
-                'name' => $name,
-                'phone_number' => $phone_number,
+
+
+        return view('cadastro.user.perfil', compact(
+            'users',
+
 
         ));
-    //dd($user, $phone_number);
     }
+
+
 
 }

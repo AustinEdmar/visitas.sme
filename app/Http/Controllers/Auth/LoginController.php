@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Auth;
-
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
@@ -34,13 +34,28 @@ class LoginController extends Controller
      * @return void
      */
 
+   /*  public function redirectTo()
+    {
+        if (auth()->user()->level->id == '3') {
+            return '/area';
+        } else if (auth()->user()->is_authenticated) {
+            return '/';
+        } else {
+            return '/home';
+        } */
+
+ protected function authenticated(Request $request, $user){
+            if (auth()->user()->level->id == '3') {
+         return redirect()->route('area.index');
+
+    } else if (auth()->user()->level->id == '4') {
+        return redirect()->route('manage_subject.create');
+    }
+}
+
+
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
     }
-
-    /* protected function credentials(Request $request)
-    {
-        return ['email'=>$request->{$this->username()},'password'=>$request->password,'status_id'=>'1'];
-    } */
 }

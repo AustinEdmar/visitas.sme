@@ -19,54 +19,72 @@
     {{-- <meta name ="csrf-token" content="{{csrf_token}}"> --}}
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
+
     <link rel="stylesheet" type="text/css" href="{{asset('jquery-ui.min.css')}}">
     <script type="text/javascript" src="{{asset('jquery-3.6.0.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('jquery-ui.js')}}"></script>
+
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
 
 
-    <title>Document</title>
+    <title>Gvisitas</title>
 </head>
 <body style="background-image: url('{{ asset('assets/img/fundo.svg')}}'); background-size: cover;background-repeat: no-repeat;">
 <div class=" d-flex justify-content-end">
     <div class="d-flex justify-content-end mr-5 mt-3">
-        <label class="text-white bold mr-3">Bemvindo de volta, <span class="">{{ Auth::user()->name }}</span></label>
-        <a href="{{ route('logout') }}" class="btn btn-danger" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-            <i class="fas fa-power-off"><span> Sair</span></i>
-        </a>
+                    @if ($user = Auth::user())
+            <label for=""></label>
+            <div class="d-flex justify-content-end mr-5">
+
+                <label class="text-white bold mr-3">Bemvindo de volta,
+
+                    </label>
+
+                    {{-- dropdown --}}
+
+
+                 <div class="dropdown show mr-2">
+                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img src="{{ asset('image')}}/{{$user->image}}" height="40px" width="40px" class="rounded-circle"> <span class="">{{ Auth::user()->name }}</span>
+                    </a>
+
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+
+                      <a class="dropdown-item" href="#">Meu Perfil</a>
+
+                      <a href="javascript:void" class="btn btn-danger dropdown-item"  onclick="$('#logout-form').submit();">
+                        <i class="fas fa-power-off " style="color: red; font-weght:bold"><span> Sair</span></i>
+                    </a>
+                    </div>
+                  </div>
+
+
+
+
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
+            </div>
+            @endif
+
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            @csrf
+        </form>
     </div>
 </div>
     <div class="m-4 ">
         <div class="">
-            <div class="bg-primary">
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb">
-                      <li class="breadcrumb-item"><a href="{{url('/')}}">Home</a></li>
-                      <li class="breadcrumb-item"><a href="{{url('/cadastro/nacionality/create')}}">Nacionalidade</a></li>
-                      <li class="breadcrumb-item"><a href="{{url('/cadastro/gender/create')}}">genero</a></li>
-                      <li class="breadcrumb-item"><a href="{{url('/cadastro/rank/create')}}">Patente</a></li>
-                      <li class="breadcrumb-item"><a href="{{url('/cadastro/pvc/create')}}">Pvc</a></li>
-                      <li class="breadcrumb-item"><a href="{{url('/cadastro/visitor/create')}}">Utente</a></li>
-                      <li class="breadcrumb-item"><a href="{{url('/cadastro/section/create')}}">section</a></li>
-                      <li class="breadcrumb-item"><a href="{{url('/cadastro/visitor/create')}}">visitor</a></li>
-                      <li class="breadcrumb-item"><a href="{{url('/cadastro/direction/create')}}">direccao</a></li>
-                      <li class="breadcrumb-item"><a href="{{url('/cadastro/department/create')}}">departamento</a></li>
-                      <li class="breadcrumb-item"><a href="{{url('/cadastro/user/create')}}">Usuarios</a></li>
-                      <li class="breadcrumb-item"><a href="{{url('/cadastro/status/create')}}">Status</a></li>
-                      <li class="breadcrumb-item"><a href="{{url('/cadastro/progress/create')}}">Progresso</a></li>
-                      <li class="breadcrumb-item"><a href="{{url('/cadastro/document/create')}}">documento</a></li>
-                      <li class="breadcrumb-item"><a href="{{url('/cadastro/permission/create')}}">permissoes</a></li>
-                      <li class="breadcrumb-item"><a href="{{url('/cadastro/level/create')}}">permissoes</a></li>
 
-                      <li class="breadcrumb-item"><a href="{{url('/cadastro/manage_subject/create')}}">Motivo</a></li>
-                      <li class="breadcrumb-item"><a href="{{url('/relatorio')}}">Relatorio</a></li>
-                      <li class="breadcrumb-item"><a href="{{url('/relatorio/pdf')}}">pdf</a></li>
-                      <li class="breadcrumb-item active" aria-current="page"></li>
-                    </ol>
-                  </nav>
+                        <div class="bg-primary">
+
+
+                            {{-- partials --}}
+                            @include('cadastro.partials.ol_partials')
+
 
                  <div class="card-header  ">
+
 
 
                             <h6 class="text-white">Cadastrar Assunto</h6>
@@ -93,7 +111,7 @@
 
                                 <div class="row ">
                                     <div class="col-sm mt-2" >
-                                        <label class="text-white bg-warning"> Primeiro Busque o visitante</label>
+                                        <label class="text-white bg-warning"> 1º Busque o Visitante</label>
 
                                         <input type="text" id="visitor_search"  placeholder="Ache o Visitante presente" class="form-control">
                                     </div>
@@ -119,7 +137,7 @@
                             <div class="row">
 
                                 <div class="col-sm mt-2">
-                                    <label class="text-white bg-warning" >Segundo Busque o Funcionario a ser contactado </label>
+                                    <label class="text-white bg-warning" >2º Busque o Funcionario a ser Contactado </label>
                                     <input type="text" id="employee_search" class="form-control " placeholder="Buscar o nome do funcionario" style="border:red ">
                                     {{--1 input do selecionado --}}
                                 </div>
@@ -127,7 +145,7 @@
 
 
                                 <div class="col-sm">
-                                    <label class="text-white">Funcionario a contactar</label>
+                                    <label class="text-white">Funcionario a Contactar</label>
                                     <input type="text" id="employeename"  placeholder="Ache o Visitante presente" class="form-control" readonly >
                                 </div>
 
@@ -151,7 +169,7 @@
 
 
                                 <div class="col-sm">
-                                  <label class="text-white">Itens deixados</label>
+                                  <label class="text-white">Itens Deixados</label>
                                   <input type="text" class="form-control " name="object_left" placeholder="Escreva o nome" value="{{old('object_left')}}" autocomplete="off" @error('object_left') is-invalid @enderror>
                                   @error('object_left')
                                   <span class="invalid-feedback" role="alert">
@@ -263,7 +281,7 @@
                               <th scope="col" class="text-white" class="text-white">Hora entrada</th>
                               <th scope="col" class="text-white" class="text-white">Hora saida</th>
 
-                                <th scope="col" class="text-white">andamento</th>
+                                <th scope="col" class="text-white">Andamento</th>
                               <th scope="col" class="text-white ml-5">Acções</th>
                             </tr>
 
@@ -295,7 +313,7 @@
                                @if ($manage_subject->created_at != $manage_subject->updated_at)
                                <td class="text-white">{{$manage_subject->updated_at->diffForHumans() ??''}}</td>
                                @else
-                               <td class="text-white "><span class="bg-danger">Visitante sem saida</span></td>
+                               <td class="text-white "><span class="bg-danger">Visitante Sem Saida</span></td>
 
                                @endif
 

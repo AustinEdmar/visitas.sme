@@ -1,10 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Services\PayUService\Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
-use App\{Visitor, Nacionality, Gender, Document};
+use App\{Visitor, Nacionality, Gender, Document, Floor};
 
 use Redirect;
 use Brian2694\Toastr\Facades\Toastr;
@@ -21,19 +21,31 @@ class VisitorController extends Controller
     $documents = Document::get();
     $genders = Gender::get();
 
+    try {
+
         $numero=$request['bi'];
-       // dd($numero);
+        // dd($numero);
 
-        $response=http::withBasicAuth('SME_USER','P@ssw0rdCISP')->post('http://10.1.51.14:9876/api/testQuery',
 
-    [
-        'id_number' => $numero,
-    ]
+         $response=http::withBasicAuth('SME_USER','P@ssw0rdCISP')->post('http://10.1.51.14:9876/api/testQuery',
 
-);
+         [
+             'id_number' => $numero,
+         ]
 
-$resposta=$response->json();
-$array=$resposta[0];
+     );
+
+     $resposta=$response->json();
+     $array=$resposta[0];
+     }
+
+       catch (\Exception $e) {
+// return back()->withError($exception->getMessage())->withInput();
+          return $e->getMessage();
+      }
+
+
+
 
   //dd($array);
 
