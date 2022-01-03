@@ -31,6 +31,12 @@ header("refresh: 80");
 
 
       <div class="mt-5">
+          @if($errors->any())
+
+<div class="alert alert-danger" role="alert">
+    {{$errors->first()}}
+  </div>
+@endif
 
            <div class="row">
 
@@ -47,7 +53,7 @@ header("refresh: 80");
                                 <select name="direction_id" id="" class="form-control">
                                     <option value="">Seleccione a direcção</option>
                                     @foreach ($directions as $direction)
-                                            <option value="{{$direction->id}}">{{$direction->name}}</option>
+                                            <option value="{{$direction->id or old('direction->name') }}">{{$direction->name}}</option>
                                     @endforeach
                                 </select>
                                 @endif

@@ -235,6 +235,7 @@ page-break-before: always;
     <div class="tabelamargin ">
         <div>
                 <span>Resultados da Pesquisa</span>
+                
         </div>
         <div ">
 
@@ -291,6 +292,7 @@ page-break-before: always;
 
                           </td>
                           <td>{{$manage_subject->created_at}}</td>
+
 
                           @if($manage_subject->created_at != $manage_subject->updated_at)
                          <td class="">{{$manage_subject->updated_at ??''}}</td>

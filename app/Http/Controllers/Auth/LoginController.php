@@ -34,15 +34,6 @@ class LoginController extends Controller
      * @return void
      */
 
-   /*  public function redirectTo()
-    {
-        if (auth()->user()->level->id == '3') {
-            return '/area';
-        } else if (auth()->user()->is_authenticated) {
-            return '/';
-        } else {
-            return '/home';
-        } */
 
  protected function authenticated(Request $request, $user){
             if (auth()->user()->level->id == '3') {

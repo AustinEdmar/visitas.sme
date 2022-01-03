@@ -2,10 +2,6 @@
 
 All notable changes to `ignition` will be documented in this fil
 
-## 2.16.0 - 2021-10-28
-
-- improve recording data from jobs (#416)
-
 ## 2.15.0 - 2021-10-11
 
 - improve output of flare:test

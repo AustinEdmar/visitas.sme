@@ -7,6 +7,7 @@ use App\{User, Direction, Manage_subject,  Section, Department, Document, Floor,
 use Illuminate\Http\Request;
 use Redirect;
 use DB;
+
 use Brian2694\Toastr\Facades\Toastr;
 use Validator;
 
@@ -189,6 +190,7 @@ class Manage_subjectController extends Controller
             //Floor::create($request->all());
             Toastr::success('Adicionado com sucesso :)','Sucesso');
          }
+         
 
         return Redirect::to('cadastro/manage_subject/create');
 

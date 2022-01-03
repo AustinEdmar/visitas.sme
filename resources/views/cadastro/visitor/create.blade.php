@@ -4,6 +4,12 @@
 
 <div class="container ">
     <div class="">
+        @if($errors->any())
+
+<div class="alert alert-danger" role="alert">
+    {{$errors->first()}}
+  </div>
+@endif
         <div class="">
             @include('cadastro.partials.ol_partials')
 

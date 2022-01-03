@@ -40,8 +40,11 @@ class VisitorController extends Controller
      }
 
        catch (\Exception $e) {
-// return back()->withError($exception->getMessage())->withInput();
-          return $e->getMessage();
+        //return back()->withError($e->getMessage())->withInput();
+        return Redirect::back()->withErrors(['msg' => 'Falha na busca de dados da identificação, insira manualmente os dados do visitante']);
+
+        Toastr::success('Adicionado com sucesso :)','Sucesso');
+          //return $e->getMessage();
       }
 
 

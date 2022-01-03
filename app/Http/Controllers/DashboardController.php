@@ -3,13 +3,15 @@
 namespace App\Http\Controllers;
 
 use DB;
+use PDF;
 use App\Section;
 use Carbon\Carbon;
-use PDF;
 use App\Department;
 //use Barryvdh\DomPDF\PDF;
+use Brian2694\Toastr\Facades\Toastr;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 use App\{Direction, Floor, Manage_subject, User, Visitor, };
 
 class DashboardController extends Controller
@@ -1549,27 +1551,25 @@ class DashboardController extends Controller
 
               ->get();
             }
+            if(count($manage_subjects) > 0){
+                $hoje = Carbon::now()->format('d-m-Y');
 
+                $pdf = PDF::loadView('dashboard.relatoriopdf', compact('manage_subjects','hoje'))->setPaper('a4', 'landscape');
+                return $pdf->stream('relatorio.pdf');
+                return view('dashboard.relatorio', compact('manage_subjects'));
 
-
-
-            $hoje = Carbon::now()->format('d-m-Y');
-
-                   /*  if(!isset($manage_subjects)){
-
-                        return redirect()->back();
-                    } */
-
-                    $pdf = PDF::loadView('dashboard.relatoriopdf', compact('manage_subjects','hoje'))->setPaper('a4', 'landscape');
-                    return $pdf->stream('relatorio.pdf');
-                    return view('dashboard.relatorio', compact('manage_subjects'));
-
-
+              }else{
+                  /* toastr()->success('Dado inserido com sucesso'); */
+            Toastr::error('Nao conseguimos encontrar :)','Pesquisa falhada');
+                return Redirect::back()->withErrors(['msg' => 'Não foi encontrado  registros da pesquisa, por favor tente novamente filtrando mais campos']);
+              }
 
             }
 
+
     public function listarpdf()
     {
+
 
                     $manage_subjects = DB::table('manage_subjects')
                     ->join('users', 'manage_subjects.user_id', '=', 'users.id')
@@ -1583,11 +1583,16 @@ class DashboardController extends Controller
                     ->select('manage_subjects.*', 'visitors.name as visitors_name',
                     'visitors.phone_number as visitors_phone_number', 'directions.name as directions_name', 'visitors.phone_number as visitors_phone_number', 'users.name as users_name','nacionalities.name as nacionality_name','departments.name as departments_name','sections.name as sections')
                     ->get();
-          //  //dd($manage_subjects);
+          if(count($manage_subjects) > 0){
+            $hoje = Carbon::now()->format('d-m-Y H:i:s');
+            dd($hoje);
+          //$manage_subjects = Manage_subject::all();
+         $pdf = PDF::loadView('dashboard.listarpdf', compact('manage_subjects','hoje'))->setPaper('a4', 'landscape');
+          return $pdf->stream('relatorio.pdf');
 
-        //$manage_subjects = Manage_subject::all();
-       $pdf = PDF::loadView('dashboard.listarpdf', compact('manage_subjects'))->setPaper('a4', 'landscape');
-        return $pdf->stream('relatorio.pdf');
+          }else{
+            return Redirect::back()->withErrors(['msg' => 'Falha na busca de dados da identificação, insira manualmente os dados do visitante']);
+          }
 
 
 
