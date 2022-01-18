@@ -64,7 +64,7 @@
                                                             @foreach ($genders as $gender )
                                                             <span>
                                                                 <label >
-                                                                    <input type="radio" name="gender_id" id="" class="" value="">
+                                                                    <input type="radio" name="gender_id" id="" class="" value="{{$gender->id}}">
                                                                     <span>{{$gender->name}}</span>
 
                                                                     @error('gender_id')

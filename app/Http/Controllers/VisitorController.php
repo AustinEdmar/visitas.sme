@@ -50,6 +50,8 @@ class VisitorController extends Controller
 
 
 
+
+
   //dd($array);
 
 return view('cadastro.visitor.consulta', compact('array','documents','genders'));
@@ -65,7 +67,8 @@ public function create(Request $request)
 $genders = Gender::get();
 $documents = Document::get();
 $nacionalities = Nacionality::get();
-$visitors = Visitor::Simplepaginate(3);
+$visitors = Visitor::latest()->paginate(5);
+
 
 return view('cadastro.visitor.create', compact('visitors', 'nacionalities','genders', 'documents'/* ,'bisave' */));
 }
@@ -75,12 +78,23 @@ return view('cadastro.visitor.create', compact('visitors', 'nacionalities','gend
 public function store(Request $request)
 {
 
-     $data = $request->all();
 
+     if(!$request->has('gender_id')){
+
+        Toastr::error('Falha ao cadastrar verifique os dados ou cadastre manualmente :)','Error');
+        return Redirect::to('/cadastro/visitor/create');
+    }else{
+        $data = $request->all();
 
         $data['name'] = $request->name. " ".$request->nickname;
         $data['image'] = $request->image;
+
         $data['affiliation'] = $request->father. " "." e de ".$request->mother;
+
+        if($request->has('affiliation')){
+            $data['affiliation'] = $request->affiliation;
+        }
+
         $data['gender_id'] = $request->gender_id;
         $data['phone_number'] = $request->phone_number;
         $data['birthday'] = $request->birthday;
@@ -89,11 +103,13 @@ public function store(Request $request)
         $data['doc_emition'] = $request->doc_emition;
         $data['nacionality_id'] = $request->nacionality_id;
 
-
         Visitor::create($data);
 
         toastr()->success('Dado inserido com sucesso');
      return Redirect::to('cadastro/visitor/create');
+
+    }
+
 
 }
 

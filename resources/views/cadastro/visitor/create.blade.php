@@ -106,8 +106,8 @@
 
                         <div class="row">
                             <div class="col-sm">
-                                <label >Insira a foto</label>
-                                <input type="file" class="form-control" name="image" placeholder="insira a foto" value="{{old('name')}}">
+                               {{--  <label >Insira a foto</label>
+                                <input type="file" class="form-control" name="image" placeholder="insira a foto" value="{{old('name')}}"> --}}
                             </div>
                             <div class="col-sm">
                                 <label >Filiação</label>
