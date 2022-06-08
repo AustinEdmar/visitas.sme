@@ -1,0 +1,543 @@
+Wilson Colega, [18/04/2022 11:15]
+<?php
+                                                          $hosp['nacionalidade']=$item->dadosPessoaisNacionalidade;
+                      if( $hosp['nacionalidade'] == "AGO" ){
+                         echo"Angola";
+                      }elseif( $hosp['nacionalidade'] =="PRT" ){
+                        echo"Portugal";
+                     }elseif( $hosp['nacionalidade'] =="BRA"){
+                       echo"Brasil";
+                     }elseif($hosp['nacionalidade'] == "ABW" ){
+                         echo"Aruba";
+                       }elseif($hosp['nacionalidade'] == "AFG" ){
+                         echo"Afeganistão";
+                       }elseif($hosp['nacionalidade'] == "AIA" ){
+                         echo"Anguilla";
+                       }elseif($hosp['nacionalidade'] == "ALA" ){
+                         echo"Ilhas Aland";
+                       }elseif($hosp['nacionalidade'] == "ALB" ){
+                         echo"Albânia";
+                       }elseif($hosp['nacionalidade'] == "AND" ){
+                         echo"Andorra";
+                       }elseif($hosp['nacionalidade'] == "ANT" ){
+                         echo"Antilhas Holandesas";
+                       }elseif($hosp['nacionalidade'] == "ARE" ){
+                         echo"Emiratos Árabes Unidos";
+                       }elseif($hosp['nacionalidade'] == "ARG" ){
+                         echo"Argentina";
+                       }elseif($hosp['nacionalidade'] == "ARM" ){
+                         echo"Arménia";
+                       }elseif($hosp['nacionalidade'] == "ASM" ){
+                         echo"Samoa Americana";
+                       }elseif($hosp['nacionalidade'] == "ATA" ){
+                         echo"Antártida";
+                       }elseif($hosp['nacionalidade'] == "ATF" ){
+                         echo"Territórios Franceses do Sul";
+                       }elseif($hosp['nacionalidade'] == "ATG" ){
+                         echo"Antigua e Barbuda";
+                       }elseif($hosp['nacionalidade'] == "AUS" ){
+                         echo"Austrália";
+                       }elseif($hosp['nacionalidade'] == "AUT" ){
+                         echo"Áustria";
+                       }elseif($hosp['nacionalidade'] == "AZE" ){
+                         echo"Azerbaijão";
+                       }elseif($hosp['nacionalidade'] == "BDI" ){
+                         echo"Burundi";
+                       }elseif($hosp['nacionalidade'] == "BEL" ){
+                         echo"Bélgica";
+                       }elseif($hosp['nacionalidade'] == "BEN" ){
+                         echo"Benim";
+                       }elseif($hosp['nacionalidade'] == "BFA" ){
+                         echo"Burquina Faso";
+                       }elseif($hosp['nacionalidade'] == "BGD" ){
+                         echo"Bangladesh";
+                       }elseif($hosp['nacionalidade'] == "BGR" ){
+                         echo"Bulgária";
+                       }elseif($hosp['nacionalidade'] == "BHR" ){
+                         echo"Barém";
+                       }elseif($hosp['nacionalidade'] == "BHS" ){
+                         echo"Bahamas";
+                       }elseif($hosp['nacionalidade'] == "BIH" ){
+                         echo"Bósnia e Herzegovina";
+                       }elseif($hosp['nacionalidade'] == "BLR" ){
+                         echo"Bielorrússia";
+                       }elseif($hosp['nacionalidade'] == "BLZ" ){
+                         echo"Belize";
+                       }elseif($hosp['nacionalidade'] == "BOL" ){
+                         echo"Bolívia";
+                       }elseif($hosp['nacionalidade'] == "BRB" ){
+                         echo"Barbados";
+                       }elseif($hosp['nacionalidade'] == "BRN" ){
+                         echo"Brunei Darussalam";
+                       }elseif($hosp['nacionalidade'] == "BTN" ){
+                         echo"Butão";
+                       }elseif($hosp['nacionalidade'] == "BVT" ){
+                         echo"Ilha Bouvet";
+                       }elseif($hosp['nacionalidade']
+
+Wilson Colega, [18/04/2022 11:15]
+lidade']
+
+Wilson Colega, [18/04/2022 11:15]
+nalidade'] == "BWA" ){
+                         echo"Botsuana";
+                       }elseif($hosp['nacionalidade'] == "CAF" ){
+                         echo"República Centro-Africana";
+                       }elseif($hosp['nacionalidade'] == "CAN" ){
+                         echo"Canadá";
+                       }elseif($hosp['nacionalidade'] == "CCK" ){
+                         echo"Ilhas Keeling";
+                       }elseif($hosp['nacionalidade'] == "CHE" ){
+                         echo"Suíça";
+                       }elseif($hosp['nacionalidade'] == "CHL" ){
+                         echo"Chile";
+                       }elseif($hosp['nacionalidade'] == "CHN" ){
+                         echo"China";
+                       }elseif($hosp['nacionalidade'] == "CIV" ){
+                         echo"Costa do Marfim";
+                       }elseif($hosp['nacionalidade'] == "CMR" ){
+                         echo"Camarões";
+                       }elseif($hosp['nacionalidade'] == "COD" ){
+                         echo"República Democrática do Congo";
+                       }elseif($hosp['nacionalidade'] == "COG" ){
+                         echo"Congo";
+                       }elseif($hosp['nacionalidade'] == "COK" ){
+                         echo"Ilhas Cook";
+                       }elseif($hosp['nacionalidade'] == "COL" ){
+                         echo"Colômbia";
+                       }elseif($hosp['nacionalidade'] == "COM" ){
+                         echo"Comores";
+                       }elseif($hosp['nacionalidade'] == "CPV" ){
+                         echo"Cabo Verde";
+                       }elseif($hosp['nacionalidade'] == "CRI" ){
+                         echo"Costa Rica";
+                       }elseif($hosp['nacionalidade'] == "CUB" ){
+                         echo"Cuba";
+                       }elseif($hosp['nacionalidade'] == "CXR" ){
+                         echo"Ilhas Christmas";
+                       }elseif($hosp['nacionalidade'] == "CYM" ){
+                         echo"Ilhas Cayman";
+                       }elseif($hosp['nacionalidade'] == "CYP" ){
+                         echo"Chipre";
+                       }elseif($hosp['nacionalidade'] == "CZE" ){
+                         echo"República Checa";
+                       }elseif($hosp['nacionalidade'] == "D" ){
+                         echo"Alemanha";
+                       }elseif($hosp['nacionalidade'] == "D*" ){
+                         echo"Alemanha";
+                       }elseif($hosp['nacionalidade'] == "DJI" ){
+                         echo"Dijibuti";
+                       }elseif($hosp['nacionalidade'] == "DMA" ){
+                         echo"Dominica";
+                       }elseif($hosp['nacionalidade'] == "DNK" ){
+                         echo"Dinamarca";
+                       }elseif($hosp['nacionalidade'] == "DOM" ){
+                         echo"República Dominicana";
+                       }elseif($hosp['nacionalidade'] == "DZA" ){
+                         echo"Argélia";
+                       }elseif($hosp['nacionalidade'] == "ECU" ){
+                         echo"Equador";
+                       }elseif($hosp['nacionalidade'] == "EGY" ){
+                         echo"Egipto";
+                       }elseif($hosp['nacionalidade'] == "ERI" ){
+                         echo"Eritreia";
+                       }elseif($hosp['nacionalidade'] == "ESH" ){
+                         echo"Sahara Ocidental";
+                       }elseif($hosp['nacionalidade'] == "ESP" ){
+                         echo"Espanha";
+                       }elseif($hosp['nacionalidade'] == "EST" ){
+                         echo"Estónia";
+                       }elseif($hosp['nacionalidade'] == "ETH" ){
+                         echo"Etiópia";
+                       }elseif($hosp['nacionalidade'] == "FIN" ){
+                         echo"Finlândia";
+                       }elseif($hosp['nacionalidade'] == "FJI" ){
+                         echo"Fiji";
+                       }elseif($hosp['nacionalidade'] == "FLK" ){
+                         echo"Ilhas Falkland";
+
+Wilson Colega, [18/04/2022 11:15]
+}elseif($hosp['nacionalidade'] == "FRA" ){
+                         echo"França";
+                       }elseif($hosp['nacionalidade'] == "FRO" ){
+                         echo"Ilhas Faroé";
+                       }elseif($hosp['nacionalidade'] == "FSM" ){
+                         echo"Micronésia";
+                       }elseif($hosp['nacionalidade'] == "FXX" ){
+                         echo"França Metropolitana";
+                       }elseif($hosp['nacionalidade'] == "GAB" ){
+                         echo"Gabão";
+                       }elseif($hosp['nacionalidade'] == "GBD" ){
+                         echo"Territórios Ingleses";
+                       }elseif($hosp['nacionalidade'] == "GBN" ){
+                         echo"Reino Unido - Nacionais";
+                       }elseif($hosp['nacionalidade'] == "GBO" ){
+                         echo"Reino Unido - Cidadão no estrangeiro";
+                       }elseif($hosp['nacionalidade'] == "GBP" ){
+                         echo"Reino Unido - Protegido";
+                       }elseif($hosp['nacionalidade'] == "GBR" ){
+                         echo"Reino Unido - Cidadão";
+                       }elseif($hosp['nacionalidade'] == "GBS" ){
+                         echo"Reino Unido - Sujeito";
+                       }elseif($hosp['nacionalidade'] == "GEO" ){
+                         echo"Geórgia";
+                       }elseif($hosp['nacionalidade'] == "GGY" ){
+                         echo"Guernsey";
+                       }elseif($hosp['nacionalidade'] == "GHA" ){
+                         echo"Gana";
+                       }elseif($hosp['nacionalidade'] == "GIB" ){
+                         echo"Gibraltar";
+                       }elseif($hosp['nacionalidade'] == "GIN" ){
+                         echo"Guiné";
+                       }elseif($hosp['nacionalidade'] == "GLP" ){
+                         echo"Guadalupe";
+                       }elseif($hosp['nacionalidade'] == "GMB" ){
+                         echo"Gâmbia";
+                       }elseif($hosp['nacionalidade'] == "GNB" ){
+                         echo"Guiné-Bissau";
+                       }elseif($hosp['nacionalidade'] == "GNQ" ){
+                         echo"Guiné Equatorial";
+                       }elseif($hosp['nacionalidade'] == "GRC" ){
+                         echo"Grécia";
+                       }elseif($hosp['nacionalidade'] == "GRD" ){
+                         echo"Granada";
+                       }elseif($hosp['nacionalidade'] == "GRL" ){
+                         echo"Gronelândia";
+                       }elseif($hosp['nacionalidade'] == "GTM" ){
+                         echo"Guatemala";
+                       }elseif($hosp['nacionalidade'] == "GUF" ){
+                         echo"Guiana Francesa";
+                       }elseif($hosp['nacionalidade'] == "GUM" ){
+                         echo"Guam";
+                       }elseif($hosp['nacionalidade'] == "GUY" ){
+                         echo"Guiana";
+                       }elseif($hosp['nacionalidade'] == "HMD" ){
+                         echo"Ilhas Heard & MacDonald";
+                       }elseif($hosp['nacionalidade'] == "HND" ){
+                         echo"Honduras";
+                       }elseif($hosp['nacionalidade'] == "HRV" ){
+                         echo"Croácia";
+                       }elseif($hosp['nacionalidade'] == "HTI" ){
+                         echo"Haiti";
+                       }elseif($hosp['nacionalidade'] == "HUN" ){
+                         echo"Hungria";
+                       }elseif($hosp['nacionalidade'] == "IDN" ){
+                         echo"Indonésia";
+                       }elseif($hosp['nacionalidade'] == "IMN" ){
+                         echo"Ilha Man";
+                       }elseif($hosp['nacionalidade'] == "IND" ){
+                         echo"India";
+                       }elseif($hosp['nacionalidade'] == "IOT" ){
+                         echo"Território Inglês do Oceano Indico";
+                       }elseif($hosp['nacionalidade'] == "IRL" ){
+
+Wilson Colega, [18/04/2022 11:15]
+echo"Irlan
+
+Wilson Colega, [18/04/2022 11:15]
+da";
+                       }elseif($hosp['nacionalidade'] == "IRQ" ){
+                         echo"Iraque";
+                       }elseif($hosp['nacionalidade'] == "ISL" ){
+                         echo"Islândia";
+                       }elseif($hosp['nacionalidade'] == "ISR" ){
+                         echo"Israel";
+                       }elseif($hosp['nacionalidade'] == "ITA" ){
+                         echo"Itália";
+                       }elseif($hosp['nacionalidade'] == "JAM" ){
+                         echo"Jamaica";
+                       }elseif($hosp['nacionalidade'] == "JEY" ){
+                         echo"Jersey";
+                       }elseif($hosp['nacionalidade'] == "JOR" ){
+                         echo"Jordânia";
+                       }elseif($hosp['nacionalidade'] == "JPN" ){
+                         echo"Japão";
+                       }elseif($hosp['nacionalidade'] == "KAZ" ){
+                         echo"Cazaquistão";
+                       }elseif($hosp['nacionalidade'] == "KEN" ){
+                         echo"Quénia";
+                       }elseif($hosp['nacionalidade'] == "KGZ" ){
+                         echo"Quirguistão";
+                       }elseif($hosp['nacionalidade'] == "KHM" ){
+                         echo"Cambodja";
+                       }elseif($hosp['nacionalidade'] == "KIR" ){
+                         echo"Quiribati";
+                       }elseif($hosp['nacionalidade'] == "KNA" ){
+                         echo"São Cristóvão e Nevis";
+                       }elseif($hosp['nacionalidade'] == "KOR" ){
+                         echo"Coreia do Sul";
+                       }elseif($hosp['nacionalidade'] == "KWT" ){
+                         echo"Kuwait";
+                       }elseif($hosp['nacionalidade'] == "LAO" ){
+                         echo"Laos";
+                       }elseif($hosp['nacionalidade'] == "LBN" ){
+                         echo"Líbano";
+                       }elseif($hosp['nacionalidade'] == "LBR" ){
+                         echo"Libéria";
+                       }elseif($hosp['nacionalidade'] == "LBY" ){
+                         echo"Líbia";
+                       }elseif($hosp['nacionalidade'] == "LCA" ){
+                         echo"Santa Lúcia";
+                       }elseif($hosp['nacionalidade'] == "LIE" ){
+                         echo"Liechtenstein";
+                       }elseif($hosp['nacionalidade'] == "LKA" ){
+                         echo"Sri Lanca";
+                       }elseif($hosp['nacionalidade'] == "LSO" ){
+                         echo"Lesoto";
+                       }elseif($hosp['nacionalidade'] == "LTU" ){
+                         echo"Lituânia";
+                       }elseif($hosp['nacionalidade'] == "LUX" ){
+                         echo"Luxemburgo";
+                       }elseif($hosp['nacionalidade'] == "LVA" ){
+                         echo"Letónia";
+                       }elseif($hosp['nacionalidade'] == "MAR" ){
+                         echo"Marrocos";
+                       }elseif($hosp['nacionalidade'] == "MCO" ){
+                         echo"Mónaco";
+                       }elseif($hosp['nacionalidade'] == "MDA" ){
+                         echo"Moldávia";
+                       }elseif($hosp['nacionalidade'] == "MDG" ){
+                         echo"Madagáscar";
+                       }elseif($hosp['nacionalidade'] == "MDV" ){
+                         echo"Maldivas";
+                       }elseif($hosp['nacionalidade'] == "MEX" ){
+                         echo"México";
+                       }elseif($hosp['nacionalidade'] == "MHL" ){
+                         echo"Ilhas Marshall";
+                       }elseif($hosp['nacionalidade'] == "MKD" ){
+                         echo"Macedônia";
+                       }elseif($hosp['nacionalidade'] == "MLI" ){
+                         echo"Mali";
+                       }elseif($hosp['nacionalidade'] == "MLT" ){
+                         echo"Malta";
+                       }elseif($hosp['nacionalidade'] == "MMR" ){
+                         echo"Mianmar";
+
+Wilson Colega, [18/04/2022 11:15]
+}elseif($hosp['nacionalidade'] == "MNE" ){
+                         echo"Montenegro";
+                       }elseif($hosp['nacionalidade'] == "MNG" ){
+                         echo"Mongólia";
+                       }elseif($hosp['nacionalidade'] == "MNP" ){
+                         echo"Ilhas Mariana";
+                       }elseif($hosp['nacionalidade'] == "MOZ" ){
+                         echo"Moçambique";
+                       }elseif($hosp['nacionalidade'] == "MRT" ){
+                         echo"Mauritânia";
+                       }elseif($hosp['nacionalidade'] == "MSR" ){
+                         echo"Monserrate";
+                       }elseif($hosp['nacionalidade'] == "MTQ" ){
+                         echo"Martinique";
+                       }elseif($hosp['nacionalidade'] == "MUS" ){
+                         echo"Maurícias";
+                       }elseif($hosp['nacionalidade'] == "MWI" ){
+                         echo"Malaui";
+                       }elseif($hosp['nacionalidade'] == "MYS" ){
+                         echo"Malásia";
+                       }elseif($hosp['nacionalidade'] == "MYT" ){
+                         echo"Mayotte";
+                       }elseif($hosp['nacionalidade'] == "NAM" ){
+                         echo"Namíbia";
+                       }elseif($hosp['nacionalidade'] == "NCL" ){
+                         echo"Nova Caledónia";
+                       }elseif($hosp['nacionalidade'] == "NER" ){
+                         echo"Níger";
+                       }elseif($hosp['nacionalidade'] == "NFK" ){
+                         echo"Ilha Norfolk";
+                       }elseif($hosp['nacionalidade'] == "NGA" ){
+                         echo"Nigéria";
+                       }elseif($hosp['nacionalidade'] == "NIC" ){
+                         echo"Nicarágua";
+                       }elseif($hosp['nacionalidade'] == "NIU" ){
+                         echo"Niue";
+                       }elseif($hosp['nacionalidade'] == "NLD" ){
+                         echo"Holanda";
+                       }elseif($hosp['nacionalidade'] == "NOR" ){
+                         echo"Noruega";
+                       }elseif($hosp['nacionalidade'] == "NPL" ){
+                         echo"Nepal";
+                       }elseif($hosp['nacionalidade'] == "NRU" ){
+                         echo"Nauru";
+                       }elseif($hosp['nacionalidade'] == "NTZ" ){
+                         echo"Zona Neutra";
+                       }elseif($hosp['nacionalidade'] == "NZL" ){
+                         echo"Nova Zelândia";
+                       }elseif($hosp['nacionalidade'] == "OMN" ){
+                         echo"Oman";
+                       }elseif($hosp['nacionalidade'] == "PAK" ){
+                         echo"Paquistão";
+                       }elseif($hosp['nacionalidade'] == "PAN" ){
+                         echo"Panamá";
+                       }elseif($hosp['nacionalidade'] == "PCN" ){
+                         echo"Ilhas Pitcairn";
+                       }elseif($hosp['nacionalidade'] == "PER" ){
+                         echo"Peru";
+                       }elseif($hosp['nacionalidade'] == "PHL" ){
+                         echo"Filipinas";
+                       }elseif($hosp['nacionalidade'] == "PLW" ){
+                         echo"Palau";
+                       }elseif($hosp['nacionalidade'] == "PNG" ){
+                         echo"Papua-Nova Guiné";
+                       }elseif($hosp['nacionalidade'] == "POL" ){
+                         echo"Polónia";
+                       }elseif($hosp['nacionalidade'] == "PRI" ){
+                         echo"Porto Rico";
+                       }elseif($hosp['nacionalidade'] == "PRK" ){
+                         echo"Coreia do Norte";
+                       }elseif($hosp['nacionalidade'] == "PRY" ){
+                         echo"Paraguai";
+                       }elseif($hosp['nacionalidade'] == "PSE" ){
+                         echo"Palestina";
+                       }elseif($hosp['nacionalidade'] == "PYF" ){
+                         echo"Polinésia Francesa";
+
+Wilson Colega, [18/04/2022 11:15]
+}elseif($hosp['nacionalidade'] == "QAT" ){
+                         echo"Catar";
+                       }elseif($hosp['nacionalidade'] == "REU" ){
+                         echo"Reunião";
+                       }elseif($hosp['nacionalidade'] == "ROM" ){
+                         echo"Romenia";
+                       }elseif($hosp['nacionalidade'] == "ROU" ){
+                         echo"Roménia";
+                       }elseif($hosp['nacionalidade'] == "RUS" ){
+                         echo"Federação Russa";
+                       }elseif($hosp['nacionalidade'] == "RWA" ){
+                         echo"Ruanda";
+                       }elseif($hosp['nacionalidade'] == "SAI" ){
+                         echo"São Marino";
+                       }elseif($hosp['nacionalidade'] == "SAU" ){
+                         echo"Arábia Sáudita";
+                       }elseif($hosp['nacionalidade'] == "SCG" ){
+                         echo"Sérvia e Montenegro";
+                       }elseif($hosp['nacionalidade'] == "SDN" ){
+                         echo"Sudão";
+                       }elseif($hosp['nacionalidade'] == "SEN" ){
+                         echo"Senegal";
+                       }elseif($hosp['nacionalidade'] == "SGP" ){
+                         echo"Singapura";
+                       }elseif($hosp['nacionalidade'] == "SGS" ){
+                         echo"Geórgia do Sul e Ilha do Sul de Sandwich";
+                       }elseif($hosp['nacionalidade'] == "SHN" ){
+                         echo"Santa Helena";
+                       }elseif($hosp['nacionalidade'] == "SJM" ){
+                         echo"Ilhas Svalbard e Jan Mayen";
+                       }elseif($hosp['nacionalidade'] == "SLB" ){
+                         echo"Ilhas Salomão";
+                       }elseif($hosp['nacionalidade'] == "SLE" ){
+                         echo"Serra Leoa";
+                       }elseif($hosp['nacionalidade'] == "SLV" ){
+                         echo"El Salvador";
+                       }elseif($hosp['nacionalidade'] == "SMR" ){
+                         echo"São Marino";
+                       }elseif($hosp['nacionalidade'] == "SOM" ){
+                         echo"Somália";
+                       }elseif($hosp['nacionalidade'] == "SPM" ){
+                         echo"St. Pierre and Miquelon";
+                       }elseif($hosp['nacionalidade'] == "SRB" ){
+                         echo"Servia";
+                       }elseif($hosp['nacionalidade'] == "STP" ){
+                         echo"São Tomé e Príncipe";
+                       }elseif($hosp['nacionalidade'] == "SUR" ){
+                         echo"Suriname";
+                       }elseif($hosp['nacionalidade'] == "SVK" ){
+                         echo"Eslováquia";
+                       }elseif($hosp['nacionalidade'] == "SVN" ){
+                         echo"Eslovénia";
+                       }elseif($hosp['nacionalidade'] == "SWE" ){
+                         echo"Suécia";
+                       }elseif($hosp['nacionalidade'] == "SWZ" ){
+                         echo"Suazilândia";
+                       }elseif($hosp['nacionalidade'] == "SYC" ){
+                         echo"Seicheles";
+                       }elseif($hosp['nacionalidade'] == "SYR" ){
+                         echo"Síria";
+                       }elseif($hosp['nacionalidade'] == "TCA" ){
+                         echo"Ilhas Turks e Caicos";
+                       }elseif($hosp['nacionalidade'] == "TCD" ){
+                         echo"Chade";
+                       }elseif($hosp['nacionalidade'] == "TGO" ){
+                         echo"Togo";
+                       }elseif($hosp['nacionalidade'] == "THA" ){
+                         echo"Tailândia";
+                       }elseif($hosp['nacionalidade'] == "TJK" ){
+                         echo"Tajiquistão";
+                       }elseif($hosp['nacionalidade'] == "TKL" ){
+                         echo"Tokelau";
+                       }elseif($hosp['nacionalidade'] == "TKM" ){
+                         echo"Turquemanistão";
+
+Wilson Colega, [18/04/2022 11:15]
+}elseif($hosp['nacionalidade'] == "TLS" ){
+                         echo"Timor Leste";
+                       }elseif($hosp['nacionalidade'] == "TON" ){
+                         echo"Tonga";
+                       }elseif($hosp['nacionalidade'] == "TTO" ){
+                         echo"Trindade e Tobago";
+                       }elseif($hosp['nacionalidade'] == "TUN" ){
+                         echo"Tunísia";
+                       }elseif($hosp['nacionalidade'] == "TUR" ){
+                         echo"Turquia";
+                       }elseif($hosp['nacionalidade'] == "TUV" ){
+                         echo"Tuvalu";
+                       }elseif($hosp['nacionalidade'] == "TZA" ){
+                         echo"Tanzânia";
+                       }elseif($hosp['nacionalidade'] == "UGA" ){
+                         echo"Uganda";
+                       }elseif($hosp['nacionalidade'] == "UKR" ){
+                         echo"Ucrânia";
+                       }elseif($hosp['nacionalidade'] == "UMI" ){
+                         echo"Ilhas Menores dos EUA";
+                       }elseif($hosp['nacionalidade'] == "UNA" ){
+                         echo"Agência das Nações Unidas";
+                       }elseif($hosp['nacionalidade'] == "UNK" ){
+                         echo"Kosovo";
+                       }elseif($hosp['nacionalidade'] == "UNO" ){
+                         echo"Organização das Nações Unidas";
+                       }elseif($hosp['nacionalidade'] == "URY" ){
+                         echo"Uruguai";
+                       }elseif($hosp['nacionalidade'] == "USA" ){
+                         echo"Estado Unidos da América";
+                       }elseif($hosp['nacionalidade'] == "UZB" ){
+                         echo"Uzbequistão";
+                       }elseif($hosp['nacionalidade'] == "VAT" ){
+                         echo"Vaticano";
+                       }elseif($hosp['nacionalidade'] == "VCT" ){
+                         echo"São Vicente e Granadinas";
+                       }elseif($hosp['nacionalidade'] == "VEN" ){
+                         echo"Venezuela";
+                       }elseif($hosp['nacionalidade'] == "VGB" ){
+                         echo"Ilhas Vírgens (GB)";
+                       }elseif($hosp['nacionalidade'] == "VIR" ){
+                         echo"Ilhas Vírgens (EUA)";
+                       }elseif($hosp['nacionalidade'] == "VNM" ){
+                         echo"Viet Nam";
+                       }elseif($hosp['nacionalidade'] == "VUT" ){
+                         echo"Vanuatu";
+                       }elseif($hosp['nacionalidade'] == "WLF" ){
+                         echo"Ilhas Wallis & Futuna";
+                       }elseif($hosp['nacionalidade'] == "WSM" ){
+                         echo"Samoa";
+                       }elseif($hosp['nacionalidade'] == "XOM" ){
+                         echo"Ordem Militar de Malta";
+                       }elseif($hosp['nacionalidade'] == "XXA" ){
+                         echo"Pessoa sem Estado";
+                       }elseif($hosp['nacionalidade'] == "XXB" ){
+                         echo"Refugiado, Convenção de 1951";
+                       }elseif($hosp['nacionalidade'] == "XXC" ){
+                         echo"Refugiado, Outros";
+                       }elseif($hosp['nacionalidade'] == "XXX" ){
+                         echo"Nacionalidade não especificada";
+                       }elseif($hosp['nacionalidade'] == "YEM" ){
+                         echo"Iémen";
+                       }elseif($hosp['nacionalidade'] == "ZAF" ){
+                         echo"Africa do Sul";
+                       }elseif($hosp['nacionalidade'] == "ZIM" ){
+                         echo"Zimbabwe";
+                       }elseif($hosp['nacionalidade'] == "ZMB" ){
+                         echo"Zimbabwe";
+                       }elseif($hosp['nacionalidade'] == "ZWE" ){
+                         echo"Zimbabue";
+                     }                    
+                    
+              ?>

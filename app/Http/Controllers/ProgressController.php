@@ -20,6 +20,9 @@ class ProgressController extends Controller
        $progresss = Progress::Simplepaginate(3);
        return view('cadastro.progress.create', compact('progresss'));
     }
+    
+
+
 
     public function store(Request $request)
     {

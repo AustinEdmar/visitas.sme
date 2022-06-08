@@ -113,22 +113,44 @@
                                 @csrf
                                 @method('PATCH')
 
+                               @if($manage_subjects->progress->name =='Aprovado')
 
-                            <p>Deseja Aprova-lo</p>
+                                          @if(Auth::user()->level->name == 'superadmin'|| Auth::user()->level->name == 'user')
+                                        
+                                        <div class="entregar">
+                                          <p>Entregar os Pertences ao utente</p>
+                                          <select name="thing_id" id="" class="form-control" value="{{old('thing_id')}}" >
+                                                <option hidden selected >Seleccionar uma opção</option>
+                                              @foreach(App\Thing::get() as $thing)
+                                              
+                                              <option value="{{$thing->id}}">{{$thing->name}}</option>
+                                          @endforeach
+              
+                                        </select>
+                                        </div>
+
+                                        @endif
+
+
+                               @endif
+
+                            <p class="labels">Deseja Aprova-lo</p>
                             @if(Auth::user()->level->name == 'superadmin'|| Auth::user()->level->name == 'useradmin')
 
 
                             <select name="progress_id" id="" class="form-control" value="{{old('progres_id')}}"   >
+                              
 
                                 @foreach(App\Progress::get() as $progress)
 
-                                <option value="{{$progress->id}}">{{$progress->name}}</option>
+                              <option value="{{$progress->id}}"  {{ $progress->id == $manage_subjects->progress_id ? 'selected' : ''}}>{{$progress->name}}</option>
+                                                            
                             @endforeach
 
                          </select>
 
-
-
+                         
+                          
 
                             </div>
                             <div>
@@ -137,6 +159,18 @@
                             @elseif (Auth::user()->level->name != 'superadmin'|| Auth::user()->level->name != 'useradmin')
                                 <h4>Ola {{ Auth::user()->name }} não poderá aprovar, solicite a area para aprovar</h4>
                             @endif
+
+                           
+                     
+
+                            @if ($manage_subjects->progress->name =='Aprovado' && $manage_subjects->thing_id =='4' )
+                            <div class="entreguei">
+
+                                      <p class="h3">Entreguei os pertences a {{$manage_subjects->visitor->name}}</p>
+
+                                      </div>
+                            @endif
+                           
 
 
 

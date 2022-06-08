@@ -27,6 +27,9 @@
   }
 
 
+label{
+  color: white;
+}
 
 
 
@@ -74,6 +77,10 @@
     color: rgba(255, 255, 255, 0.5);
 
  }
+/* 
+ .inputfundo-content{
+   margin-left: 60px;
+ } */
 
  .container-info-login{
      text-align: center;
@@ -281,5 +288,51 @@ color: #363B64;
 }
 
 
-/* incoice */
+
+
+/* modal multistep */
+
+* {
+  margin: 0;
+  padding: 0
+}
+
+html {
+  height: 100%
+}
+
+p {
+  color: grey
+}
+
+#heading {
+  
+  text-transform: uppercase;
+  color: #673AB7;
+  font-weight: normal
+}
+
+#msform {
+  
+  text-align: center;
+  position: relative;
+  margin-top: 20px
+}
+
+
+.form-card {
+  text-align: left
+}
+
+.labels{
+  font-weight: 900;
+  font-size: medium;
+
+}
+
+
+
+
+
+
 

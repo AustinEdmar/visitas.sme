@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use DB;
+use Mail;
 use PDF;
 use App\Section;
 use Carbon\Carbon;
@@ -13,6 +14,7 @@ use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use App\{Direction, Floor, Manage_subject, User, Visitor, };
+
 
 class DashboardController extends Controller
 {
@@ -1598,6 +1600,27 @@ class DashboardController extends Controller
 
     }
 
+    public function sendmail()
+    {
+        $manage_subjects = Manage_subject::all();
+        foreach ($manage_subjects as $manage_subject) {
+            echo $manage_subject->motive;
+            }
 
+        $data["email"] = "ola@hotmail.com";
+        $data["title"] = "From G-visitas";
+        //$data["body"] = "This is Demo";
+        $data['body'] = $manage_subject->motive;
+
+        $pdf = PDF::loadView('dashboard.listarpdf', $data)->setPaper('a4', 'landscape');
+
+        Mail::send('dashboard.sendmail', $data, function($message)use($data, $pdf) {
+            $message->to($data["email"], $data["title"])
+                    ->subject($data["body"])
+                    ->attachData($pdf->output(), "relatorio.pdf");
+        });
+
+        dd('Mail enviado com sucesso');
+    }
 
 }

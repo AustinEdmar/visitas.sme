@@ -21,6 +21,11 @@ class DatabaseSeeder extends Seeder
                 'name' => 'superadmin'
         ]); */
 
+        Thing::create(['name' => 'ENTREGUEI OS PERTENCES']);
+        Thing::create(['name' => 'UTENTE SEM PERTENCES']);
+
+        /* THING */
+
         Level::create(['name' => 'superadmin']);
         Level::create(['name' => 'admin']);
         Level::create(['name' => 'useradmin']);
@@ -104,7 +109,7 @@ class DatabaseSeeder extends Seeder
         Nacionality::create(['name' => 'Dominica']);
         Nacionality::create(['name' => 'Dominican Republic']);
         Nacionality::create(['name' => 'East Timor']);
-        Nacionality::create(['name' => 'Ecudaor']);
+        Nacionality::create(['name' => 'Ecuador']);
         Nacionality::create(['name' => 'Egypt']);
         Nacionality::create(['name' => 'El Salvador']);
         Nacionality::create(['name' => 'Equatorial Guinea']);
@@ -284,6 +289,7 @@ class DatabaseSeeder extends Seeder
         Nacionality::create(['name' => 'Zaire']);
         Nacionality::create(['name' => 'Zambia']);
         Nacionality::create(['name' => 'Zimbabwe']);
+        Nacionality::create(['name' => 'Outro/SN']);
 
 
 
@@ -307,6 +313,7 @@ class DatabaseSeeder extends Seeder
         Document::create(['name' => 'Carta de conducao']);
         Document::create(['name' => 'Bilhete de Identidade']);
         Document::create(['name' => 'Passe de servico']);
+        Document::create(['name' => 'Nenhum']);
 
 
 

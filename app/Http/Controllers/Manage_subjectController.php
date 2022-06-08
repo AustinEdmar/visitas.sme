@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\{User, Direction, Manage_subject,  Section, Department, Document, Floor, Visitor, Pvc,Progress};
+use App\{User, Direction, Manage_subject,  Section, Department, Document, Floor, Visitor, Pvc,Progress, Gender, Nacionality,Thing};
 
 use Illuminate\Http\Request;
 use Redirect;
 use DB;
+
+use App\Notifications\notificaVisitas;
 
 use Brian2694\Toastr\Facades\Toastr;
 use Validator;
@@ -48,17 +50,10 @@ class Manage_subjectController extends Controller
         $documents = Document::get();
         $pvcs = Pvc::get();
         $progress = Progress::get();
+        $genders = Gender::get();
+        $nacionalities = Nacionality::get();
 
         $users = User::get();
-
-       /*  if($request){
-            $sql = trim($request->get('search'));
-            $utents = Visitor::where('doc_number', 'LIKE','%'.$sql.'%')
-                    ->orWhere('name', 'LIKE','%'.$sql.'%')->get();
-        }
- */
-
-        //dd(auth()->user()->department->id);
 
 
 
@@ -66,6 +61,8 @@ class Manage_subjectController extends Controller
             'users',
             'documents',
             'pvcs',
+            'genders',
+            'nacionalities',
             'directions',
             'visitors',
             'manage_subjects',
@@ -75,8 +72,6 @@ class Manage_subjectController extends Controller
             //'utents',
             'sections'));
     }
-
-
 
 
     public function getUsers(Request $request){
@@ -130,14 +125,15 @@ class Manage_subjectController extends Controller
                                     ->get();
         }else{
             $visitors = Visitor::orderby("name","asc")
-                                    ->select("id","name")
+                                    ->select("id","name","phone_number")
                                     ->where("name","like","%".$search."%")
+                                    ->orWhere("phone_number","like","%".$search."%")
                                    // ->limit(5)
                                     ->get();
 
         }
 
-
+      
 
         $resposta = array();
         foreach($visitors as $visitor){
@@ -167,30 +163,39 @@ class Manage_subjectController extends Controller
     {
 
 
-        $validator = $this->validate($request, [
-            'object_left' => 'required',
-            'visitor_id' => 'required',
-            'user_id' => 'required',
-            'pvc_id' => 'required',
-            'progress_id' => 'required',
-            'motive' => 'required'
-         ]);
+       
+         try {
+            $validator = $this->validate($request, [
+                'object_left' => 'required',
+                'visitor_id' => 'required',
+                'user_id' => 'required',
+                'pvc_id' => 'required',
+                'progress_id' => 'required',
+                'motive' => 'required'
+             ]);
+    
+             if($validator) {
+                 //$data = new User();
+                $data['object_left'] = $request->object_left;
+                $data['visitor_id'] = $request->visitor_id;
+                $data['user_id'] = $request->user_id;
+                $data['pvc_id'] = $request->pvc_id;
+    
+                $data['progress_id'] = $request->progress_id;
+                $data['motive'] = $request->motive;
+                $data['by'] = auth()->user()->name;
+                
+                Manage_subject::create($data);
+                \Notification::send($data, new notificaVisitas($request->motive));
+               //$data->notify(new notificaVisitas($data->motive));
+                Toastr::success('Adicionado com sucesso :)','Sucesso');
+             }
+    
+        } catch (ModelNotFoundException $exception) {
+            Toastr::error('Falha ao cadastrar verifique os dados :)','Error');
+            return back()->withError($exception->getMessage())->withInput();
+        }
 
-         if($validator) {
-            $data['object_left'] = $request->object_left;
-            $data['visitor_id'] = $request->visitor_id;
-            $data['user_id'] = $request->user_id;
-            $data['pvc_id'] = $request->pvc_id;
-
-            $data['progress_id'] = $request->progress_id;
-            $data['motive'] = $request->motive;
-            $data['by'] = auth()->user()->name;
-
-            Manage_subject::create($data);
-            //Floor::create($request->all());
-            Toastr::success('Adicionado com sucesso :)','Sucesso');
-         }
-         
 
         return Redirect::to('cadastro/manage_subject/create');
 
@@ -198,6 +203,7 @@ class Manage_subjectController extends Controller
 
     public function edit($id)
     {
+
         $manage_subjects = Manage_subject::find($id);
         return view('cadastro.manage_subject.edit', compact('manage_subjects'));
     }
@@ -206,12 +212,13 @@ class Manage_subjectController extends Controller
 
     public function update(Request $request, $id)
     {
-
-        $manage_subject = Manage_subject::find($id);
+      
         $data = $request->all();
-
-
+      
+        $manage_subject = Manage_subject::find($id);
+       
         $manage_subject->update($data);
+        
 
         return Redirect::to('cadastro/manage_subject/create')->with('message', 'Actualizado com sucesso');
 

@@ -12,7 +12,7 @@
                    <div class="col-md-12">
                        <div class="card">
                            <div class="card-header">
-                               <h4> Cadastrar Direccao
+                               <h4> Cadastrar Direcção
                                   <a href="#" class=" btn btn-warning"  data-toggle="modal" data-target="#AddStudent">Add Novo</a>
                                </h4>
                            </div>

@@ -15,8 +15,11 @@ use Illuminate\Support\Facades\Route;
     Route::get('/relatorio', [App\Http\Controllers\DashboardController::class, 'relatorio']);
     Route::any('/relatorio/search', [App\Http\Controllers\DashboardController::class, 'search'])->name('relatorio.search');
 
-// Route::get('/relatorio/searchdupla', [App\Http\Controllers\DashboardController::class, 'searchdupla'])->name('relatorio.searchDupla');
+
     Route::get('/relatorio/pdf', [App\Http\Controllers\DashboardController::class, 'listarpdf']);
+    Route::get('/sendmail', [App\Http\Controllers\DashboardController::class, 'sendmail']);
+
+ /*  Route::get('send-email-pdf', [PDFController::class, 'index']); */
 
      Route::group(['middleware'=>['protectedPageUserAdmin']],function(){
 
@@ -94,15 +97,28 @@ use Illuminate\Support\Facades\Route;
 
              });
 
+             Route::get('visitor/criar', 'VisitorController@criar');/* ->name('visitor.index'); */
+
+
             Route::group(['middleware'=>['protectedPageUser']],function(){
+
                 /* visitor */
+
             Route::resource('visitor', 'VisitorController');
             Route::get('visitor/delete/{id}', 'VisitorController@delete')->name('visitor.delete');
 
+           
+
             Route::post('visitor/consulta', 'VisitorController@consulta')->name('visitor.consulta');
+
+            Route::post('visitor/estrangeiro', 'VisitorController@getEstrangeiro')->name('visitor.estrangeiro');
+
+            Route::get('visitor/criar', 'VisitorController@criar');/* ->name('visitor.index'); */
 
 
             Route::resource('manage_subject', 'Manage_subjectController');
+
+
 
             Route::get('manage_subject/delete/{id}', [App\Http\Controllers\Manage_subjectController::class, 'delete'])->name('manage_subject.delete');
 
@@ -117,7 +133,12 @@ use Illuminate\Support\Facades\Route;
 
         Route::post('manage_subject/search','Manage_subjectController@getUsers')->name("manage.searchUsers");
 
+        Route::post('visitor/search','VisitorController@getVisitors')->name("visitor.searchUsers");
+
         Route::post('manage_subject/getvisitor','Manage_subjectController@getVisitors')->name("visitor.search");
+        /* things */
+        Route::resource('things','ThingController');
+        Route::get('things/delete/{id}', 'ThingController@delete')->name('things.delete');
 
     });
 

@@ -1,0 +1,35 @@
+$countries = array(
+          
+
+          
+            array('id' => '224','iso' => 'AE','name' => 'UNITED ARAB EMIRATES','nicename' => 'United Arab Emirates','iso3' => 'ARE','numcode' => '784','phonecode' => '971'),
+            array('id' => '225','iso' => 'GB','name' => 'UNITED KINGDOM','nicename' => 'United Kingdom','iso3' => 'GBR','numcode' => '826','phonecode' => '44'),
+            array('id' => '226','iso' => 'US','name' => 'UNITED STATES','nicename' => 'United States','iso3' => 'USA','numcode' => '840','phonecode' => '1'),
+            array('id' => '227','iso' => 'UM','name' => 'UNITED STATES MINOR OUTLYING ISLANDS','nicename' => 'United States Minor Outlying Islands','iso3' => NULL,'numcode' => NULL,'phonecode' => '1'),
+            array('id' => '228','iso' => 'UY','name' => 'URUGUAY','nicename' => 'Uruguay','iso3' => 'URY','numcode' => '858','phonecode' => '598'),
+            array('id' => '229','iso' => 'UZ','name' => 'UZBEKISTAN','nicename' => 'Uzbekistan','iso3' => 'UZB','numcode' => '860','phonecode' => '998'),
+            array('id' => '230','iso' => 'VU','name' => 'VANUATU','nicename' => 'Vanuatu','iso3' => 'VUT','numcode' => '548','phonecode' => '678'),
+            array('id' => '231','iso' => 'VE','name' => 'VENEZUELA','nicename' => 'Venezuela','iso3' => 'VEN','numcode' => '862','phonecode' => '58'),
+            array('id' => '232','iso' => 'VN','name' => 'VIET NAM','nicename' => 'Viet Nam','iso3' => 'VNM','numcode' => '704','phonecode' => '84'),
+            array('id' => '233','iso' => 'VG','name' => 'VIRGIN ISLANDS, BRITISH','nicename' => 'Virgin Islands, British','iso3' => 'VGB','numcode' => '92','phonecode' => '1284'),
+            array('id' => '234','iso' => 'VI','name' => 'VIRGIN ISLANDS, U.S.','nicename' => 'Virgin Islands, U.s.','iso3' => 'VIR','numcode' => '850','phonecode' => '1340'),
+            array('id' => '235','iso' => 'WF','name' => 'WALLIS AND FUTUNA','nicename' => 'Wallis and Futuna','iso3' => 'WLF','numcode' => '876','phonecode' => '681'),
+            array('id' => '236','iso' => 'EH','name' => 'WESTERN SAHARA','nicename' => 'Western Sahara','iso3' => 'ESH','numcode' => '732','phonecode' => '212'),
+            array('id' => '237','iso' => 'YE','name' => 'YEMEN','nicename' => 'Yemen','iso3' => 'YEM','numcode' => '887','phonecode' => '967'),
+            array('id' => '238','iso' => 'ZM','name' => 'ZAMBIA','nicename' => 'Zambia','iso3' => 'ZMB','numcode' => '894','phonecode' => '260'),
+            array('id' => '239','iso' => 'ZW','name' => 'ZIMBABWE','nicename' => 'Zimbabwe','iso3' => 'ZWE','numcode' => '716','phonecode' => '263'),
+            array('id' => '240','iso' => 'RS','name' => 'SERBIA','nicename' => 'Serbia','iso3' => 'SRB','numcode' => '688','phonecode' => '381'),
+            array('id' => '241','iso' => 'AP','name' => 'ASIA PACIFIC REGION','nicename' => 'Asia / Pacific Region','iso3' => '0','numcode' => '0','phonecode' => '0'),
+            array('id' => '242','iso' => 'ME','name' => 'MONTENEGRO','nicename' => 'Montenegro','iso3' => 'MNE','numcode' => '499','phonecode' => '382'),
+            array('id' => '243','iso' => 'AX','name' => 'ALAND ISLANDS','nicename' => 'Aland Islands','iso3' => 'ALA','numcode' => '248','phonecode' => '358'),
+            array('id' => '244','iso' => 'BQ','name' => 'BONAIRE, SINT EUSTATIUS AND SABA','nicename' => 'Bonaire, Sint Eustatius and Saba','iso3' => 'BES','numcode' => '535','phonecode' => '599'),
+            array('id' => '245','iso' => 'CW','name' => 'CURACAO','nicename' => 'Curacao','iso3' => 'CUW','numcode' => '531','phonecode' => '599'),
+            array('id' => '246','iso' => 'GG','name' => 'GUERNSEY','nicename' => 'Guernsey','iso3' => 'GGY','numcode' => '831','phonecode' => '44'),
+            array('id' => '247','iso' => 'IM','name' => 'ISLE OF MAN','nicename' => 'Isle of Man','iso3' => 'IMN','numcode' => '833','phonecode' => '44'),
+            array('id' => '248','iso' => 'JE','name' => 'JERSEY','nicename' => 'Jersey','iso3' => 'JEY','numcode' => '832','phonecode' => '44'),
+            array('id' => '249','iso' => 'XK','name' => 'KOSOVO','nicename' => 'Kosovo','iso3' => '---','numcode' => '0','phonecode' => '381'),
+            array('id' => '250','iso' => 'BL','name' => 'SAINT BARTHELEMY','nicename' => 'Saint Barthelemy','iso3' => 'BLM','numcode' => '652','phonecode' => '590'),
+            array('id' => '251','iso' => 'MF','name' => 'SAINT MARTIN','nicename' => 'Saint Martin','iso3' => 'MAF','numcode' => '663','phonecode' => '590'),
+            array('id' => '252','iso' => 'SX','name' => 'SINT MAARTEN','nicename' => 'Sint Maarten','iso3' => 'SXM','numcode' => '534','phonecode' => '1'),
+            array('id' => '253','iso' => 'SS','name' => 'SOUTH SUDAN','nicename' => 'South Sudan','iso3' => 'SSD','numcode' => '728','phonecode' => '211')
+          );

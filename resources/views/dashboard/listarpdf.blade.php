@@ -246,22 +246,22 @@ color: rgba(0, 0, 0, 0.64);
 
                 <tbody>
                   <tr>
-                 @foreach ( $manage_subjects as $key=> $manage_subject )
-                    <th scope="row">{{$key+1}}</th>
-                    <td>{{$manage_subject->visitors_name }}</td>
+                {{--  @foreach ( $manage_subjects as $key=> $manage_subject ) --}}
+                    <th scope="row">{{-- {{$key+1}} --}}</th>
+                    <td>{{$manage_subject->visitors_name  ??''}}</td>
 
-                    <td>{{$manage_subject->motive}}</td>
-                    <td>{{$manage_subject->users_name}}</td>
-                    <td>{{$manage_subject->visitors_phone_number}}</td>
+                    <td>{{$manage_subject->motive ??''}}</td>
+                    <td>{{$manage_subject->users_name ??''}}</td>
+                    <td>{{$manage_subject->visitors_phone_number ??''}}</td>
 
-                    <td>{{$manage_subject->users_name }}</td>
+                    <td>{{$manage_subject->users_name  ??''}}</td>
 
-                    <td>{{$manage_subject->created_at}}</td>
+                    <td>{{$manage_subject->created_at ??''}}</td>
                   </tr>
 
 
                 </tbody>
-                @endforeach
+                {{-- @endforeach --}}
               </table>
 
 

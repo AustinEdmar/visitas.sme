@@ -30,12 +30,13 @@
                   <li class="breadcrumb-item"><a href="{{url('/relatorio/pdf')}}">pdf</a></li>
                   <li class="breadcrumb-item active" aria-current="page"></li>
                   @endif
-                  <li class="breadcrumb-item"><a href="{{url('/cadastro/visitor/create')}}" class="btn btn-success">Voltar</a></li>
+                  <li class="breadcrumb-item"><a href="{{url('/cadastro/manage_subject/create')}}" class="btn btn-success">Voltar</a></li>
                 </ol>
               </nav>
 
-
-        <div class="modal-body">
+        <div class="">
+            
+            
 
             @if (session('error'))
                               <div class="alert alert-danger">{{ session('error') }}</div>
@@ -45,20 +46,20 @@
                 <form action="{{route('visitor.store')}}" method="POST" enctype="multipart/form-data" >
                     @csrf
 
-                @if(!isset(auth()->user()->level->permission['name']['superadmin']['can-add']))
+          
 
 
                  <div class=" form-group">
 
-                    @if ($errors->any())
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-        @endif
+                                @if ($errors->any())
+                        <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                    </div>
+                    @endif
 
                     <div class="container">
                         <div class="row">
@@ -179,13 +180,13 @@
 
                  <div class="modal-footer">
 
-                    <a href="{{url('/cadastro/visitor/create')}}" class="btn btn-danger">Voltar</a>
+                    <a href="{{url('/cadastro/manage_subject/create')}}" class="btn btn-danger">Voltar</a>
                     <button type="submit" class="btn btn-warning">cadastrar</button>
                   </form>
                   </div>
 
 
-        @endif
+
 
 
 

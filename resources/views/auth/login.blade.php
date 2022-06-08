@@ -27,14 +27,14 @@
              <div class="">
 
                      <div class="funciona  ">
-                      <p class="">
+                      <p class="text-white">
                          como funciona
 
                       </p>
                      </div>
 
                  <div class="svisitas">
-                     <p class="">
+                     <p class="text-white">
                          Sistema de visitas
 
                       </p>
@@ -48,8 +48,8 @@
 
                   <div class=" ">
 
-                     <div class="">
-                         <div class="inputfundo">
+                     <div class="ml-5">
+                         <div class="inputfundo  ">
                              <div class="inputfundo2  " style="background-image: url('{{ asset('assets/img/Vector3.png')}}'); background-size: cover;background-repeat: no-repeat;">
                                <div class="container ">
                                    <div class="d-flex justify-content-center">

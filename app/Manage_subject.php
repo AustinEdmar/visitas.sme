@@ -3,13 +3,17 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Notifications\Notifiable;
 
 class Manage_subject extends Model
 {
+
+    use Notifiable;
+
     protected $fillable = [
 
         'pvc_number', 'object_left', 'exit_time', 'motive','user_id','department_id',
-        'pvc_id', 'visitor_id', 'direction_id', 'document_id','progress_id','by'
+        'pvc_id', 'visitor_id', 'direction_id', 'document_id','progress_id','by','thing_id'
     ];
 
     public function pvc()
@@ -25,6 +29,11 @@ class Manage_subject extends Model
     public function progress()
     {
         return $this->belongsTo(Progress::class);
+    }
+
+    public function thing()
+    {
+        return $this->belongsTo(Thing::class);
     }
 
     public function visitor()

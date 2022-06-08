@@ -4,7 +4,7 @@
 
 
 
-                 @if (auth()->user()->level->permission->id  == '1')
+              <!--    @if (auth()->user()->level->permission->id  == '1') -->
                                     <li class="breadcrumb-item"><a href="{{url('/')}}">Home</a></li>
 
                             <li class="breadcrumb-item"><a href="{{url('/cadastro/nacionality/create')}}">Nacionalidade</a></li>
@@ -18,6 +18,7 @@
                             <li class="breadcrumb-item"><a href="{{url('/cadastro/department/create')}}">departamento</a></li>
                             <li class="breadcrumb-item"><a href="{{url('/cadastro/user/create')}}">Usuarios</a></li>
                             <li class="breadcrumb-item"><a href="{{url('/cadastro/status/create')}}">Status</a></li>
+                            <li class="breadcrumb-item"><a href="{{url('/cadastro/things/create')}}">coisas</a></li>
                             <li class="breadcrumb-item"><a href="{{url('/cadastro/progress/create')}}">Progresso</a></li>
                             <li class="breadcrumb-item"><a href="{{url('/cadastro/document/create')}}">documento</a></li>
                             <li class="breadcrumb-item"><a href="{{url('/cadastro/permission/create')}}">permissoes</a></li>
@@ -33,7 +34,7 @@
 
 
 
-                 @elseif(auth()->user()->level->permission->id  == '2')
+                <!--  @elseif(auth()->user()->level->permission->id  == '2') -->
 
                             <li class="breadcrumb-item"><a href="{{url('/')}}" >Home</a></li>
 
@@ -63,13 +64,13 @@
 
 
 
-                @elseif(auth()->user()->level->permission->id  == '3')
+              <!--   @elseif(auth()->user()->level->permission->id  == '3') -->
 
                             <li class="breadcrumb-item"><a href="{{url('/area')}}" class="btn btn-success">Area</a></li>
 
 
 
-                @elseif(auth()->user()->level->permission->id  == '4')
+            <!--     @elseif(auth()->user()->level->permission->id  == '4') -->
 
                            <li class="breadcrumb-item"><a href="{{url('/cadastro/visitor/create')}}" >Cadastrar Visitante</a></li>
 
@@ -79,7 +80,7 @@
 
                             <li class="breadcrumb-item active" aria-current="page"></li>
 
-                @endif
+          <!--       @endif -->
 
 
 
