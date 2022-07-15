@@ -108,6 +108,7 @@ class ComposerStaticInitf9c2efc1e638fb4192e24443aac7322b
             'Psr\\Http\\Message\\' => 17,
             'Psr\\EventDispatcher\\' => 20,
             'Psr\\Container\\' => 14,
+            'ProtoneMedia\\LaravelCrossEloquentSearch\\' => 40,
             'Prophecy\\' => 9,
             'PhpParser\\' => 10,
             'PhpOption\\' => 10,
@@ -376,6 +377,10 @@ class ComposerStaticInitf9c2efc1e638fb4192e24443aac7322b
         'Psr\\Container\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/container/src',
+        ),
+        'ProtoneMedia\\LaravelCrossEloquentSearch\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/protonemedia/laravel-cross-eloquent-search/src',
         ),
         'Prophecy\\' => 
         array (
@@ -4029,6 +4034,12 @@ class ComposerStaticInitf9c2efc1e638fb4192e24443aac7322b
         'Prophecy\\Prophet' => __DIR__ . '/..' . '/phpspec/prophecy/src/Prophecy/Prophet.php',
         'Prophecy\\Util\\ExportUtil' => __DIR__ . '/..' . '/phpspec/prophecy/src/Prophecy/Util/ExportUtil.php',
         'Prophecy\\Util\\StringUtil' => __DIR__ . '/..' . '/phpspec/prophecy/src/Prophecy/Util/StringUtil.php',
+        'ProtoneMedia\\LaravelCrossEloquentSearch\\ModelToSearchThrough' => __DIR__ . '/..' . '/protonemedia/laravel-cross-eloquent-search/src/ModelToSearchThrough.php',
+        'ProtoneMedia\\LaravelCrossEloquentSearch\\OrderByRelevanceException' => __DIR__ . '/..' . '/protonemedia/laravel-cross-eloquent-search/src/OrderByRelevanceException.php',
+        'ProtoneMedia\\LaravelCrossEloquentSearch\\Search' => __DIR__ . '/..' . '/protonemedia/laravel-cross-eloquent-search/src/Search.php',
+        'ProtoneMedia\\LaravelCrossEloquentSearch\\SearchFactory' => __DIR__ . '/..' . '/protonemedia/laravel-cross-eloquent-search/src/SearchFactory.php',
+        'ProtoneMedia\\LaravelCrossEloquentSearch\\Searcher' => __DIR__ . '/..' . '/protonemedia/laravel-cross-eloquent-search/src/Searcher.php',
+        'ProtoneMedia\\LaravelCrossEloquentSearch\\ServiceProvider' => __DIR__ . '/..' . '/protonemedia/laravel-cross-eloquent-search/src/ServiceProvider.php',
         'Psr\\Container\\ContainerExceptionInterface' => __DIR__ . '/..' . '/psr/container/src/ContainerExceptionInterface.php',
         'Psr\\Container\\ContainerInterface' => __DIR__ . '/..' . '/psr/container/src/ContainerInterface.php',
         'Psr\\Container\\NotFoundExceptionInterface' => __DIR__ . '/..' . '/psr/container/src/NotFoundExceptionInterface.php',

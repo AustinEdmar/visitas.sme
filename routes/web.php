@@ -86,7 +86,12 @@ use Illuminate\Support\Facades\Route;
         /* manage_subjects */
 
             Route::resource('user', 'UserController');
+
             Route::get('user/delete/{id}', 'UserController@delete')->name('user.delete');
+            
+            Route::get('autocomplete', 'UserController@autocomplete')->name('autocomplete');
+
+            Route::get('autocomplete', 'UserController@autocomplete')->name('autocomplete');
 
             /* Route::get('user/perfil/{id}', 'UserController@perfil')->name('user.perfil'); */
 

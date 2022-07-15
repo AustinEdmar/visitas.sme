@@ -1,12 +1,12 @@
 <?php return array (
   'root' => 
   array (
-    'pretty_version' => '1.0.0+no-version-set',
-    'version' => '1.0.0.0',
+    'pretty_version' => 'dev-main',
+    'version' => 'dev-main',
     'aliases' => 
     array (
     ),
-    'reference' => NULL,
+    'reference' => '564c3bc3c87f707e4103223dbf84e2beeb507358',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -453,12 +453,12 @@
     ),
     'laravel/laravel' => 
     array (
-      'pretty_version' => '1.0.0+no-version-set',
-      'version' => '1.0.0.0',
+      'pretty_version' => 'dev-main',
+      'version' => 'dev-main',
       'aliases' => 
       array (
       ),
-      'reference' => NULL,
+      'reference' => '564c3bc3c87f707e4103223dbf84e2beeb507358',
     ),
     'laravel/tinker' => 
     array (
@@ -715,6 +715,15 @@
       array (
       ),
       'reference' => '50a58a60b85947b0bee4c8ecfe0f4bbdcf20e984',
+    ),
+    'protonemedia/laravel-cross-eloquent-search' => 
+    array (
+      'pretty_version' => '2.4.0',
+      'version' => '2.4.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '664d90072f78bbdb5b7525d57a05ecf590987520',
     ),
     'psr/container' => 
     array (

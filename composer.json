@@ -19,6 +19,7 @@
         "laravel/tinker": "^2.0",
         "laravel/ui": "2.4",
         "nesbot/carbon": "^2.54",
+        "protonemedia/laravel-cross-eloquent-search": "^2.4",
         "silviolleite/laravelpwa": "^2.0",
         "spatie/laravel-backup": "^6.16",
         "unicodeveloper/laravel-password": "^1.0"

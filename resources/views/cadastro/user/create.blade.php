@@ -31,7 +31,7 @@
                                             <form action="{{route('user.store')}}"  method="POST" enctype="multipart/form-data" >
                                                 @csrf
 
-                                         <div class="  row">
+                                         <div class=" row">
 
                                              <div class=" form-group">
 
@@ -49,6 +49,7 @@
                                                 <div class="">
                                                     <div class="row">
                                                       <div class="col-sm">
+                                                          oi
                                                         <label  >Nome do Usuario</label>
                                                         <input type="text" class="form-control " name="name" placeholder="Escreva o nome" value="" autocomplete="off">
 
@@ -360,9 +361,6 @@
         </div>
     </div>
 </div>
-
-
-
 
 
 

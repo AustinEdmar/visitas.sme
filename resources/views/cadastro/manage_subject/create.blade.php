@@ -210,99 +210,9 @@
 
                                                                         <form action="{{route('visitor.store')}}" method="POST" enctype="multipart/form-data" >
                                                                             @csrf
-
-                                                                          <div class="row">
-                                                                          <div class="col-sm">
-                                                                    <label >Nome do Visitante</label>
-                                                                    <input type="text" class="form-control " name="name" placeholder="Escreva o nome" >
-
-                                                                    @error('name')
-                                                                        <span class="text-danger">{{$message}}</span>
-                                                                    @enderror
-
-                                                                  </div>
-
-                                                                  <div class="col-sm">
-                                                                    <label >Sexo</label>
-
-                                                                    <div>
-                                                                        @foreach ($genders as $gender )
-                                                                        <span>
-                                                                            <label >
-                                                                                <input type="radio" name="gender_id" id="" class="" value="{{$gender->id}}">
-                                                                                <span>{{$gender->name}}</span>
-
-                                                                                @error('gender_id')
-                                                                                 <span class="text-danger">{{$message}}</span>
-                                                                                @enderror
-                                                                            </label>
-                                                                        </span>
-
-                                                                       @endforeach
+     
                                                                     </div>
-                                                                  </div>
-
-
-                                                                    <div class="col-sm">
-                                                                    <label >Data de Nascimento</label>
-                                                                    <input type="date" class="form-control" name="birthday" placeholder="Escreva a data de aniversario" value="{{old('birthday')}}">
-
-                                                                  </div>
-
-                                                                </div>
-
-                                                                <div class="row">
-                                                                    <div class="col-sm">
-                                                                    <label >Selecione a Nacionalidade</label>
-                                                            <select name="nacionality_id" id="" class="form-control" value="{{old('nacionality_id')}}">
-                                                                    <option value="" disabled selected>
-                                                                        Selecione o País
-                                                                    </option>
-                                                                    @foreach ($nacionalities as $nacionality )
-                                                                            <option value="{{$nacionality->id}}">{{$nacionality->name}}</option>
-                                                                    @endforeach
-                                                           </select>
-
-                                                                    </div>
-                                                                    <div class="col-sm">
-                                                                        <label >Filiação</label>
-                                                                        <input type="text" class="form-control" name="affiliation" placeholder="Escreva a filiacao" value="{{old('affiliation')}}">
-                                                                    </div>
-                                                                    <div class="col-sm">
-                                                                        <label >Telefone</label>
-                                                                        <input type="number" class="form-control" name="phone_number" placeholder="Escreva o celular" value="{{old('phone_number')}}">
-                                                                    </div>
-                                                                </div>
-
-
-                                                                <div class="row">
-                                                                    <div class="col-sm">
-                                                                        <label >Documento</label>
-                                                                        <select name="document_id" id="" class="form-control" value="{{old('document_id')}}">
-                                                                            <option value="" disabled selected>
-                                                                                Selecione o tipo
-                                                                            </option>
-                                                                            @foreach ($documents as $document )
-                                                                                    <option value="{{$document->id}}">{{$document->name}}</option>
-                                                                            @endforeach
-                                                                   </select>
-                                                                    </div>
-
-                                                                    <div class="col-sm">
-                                                                        <label >Numero documento</label>
-                                                                        <input type="text" class="form-control" name="doc_number" placeholder="Escreva o numero"" value="{{old('affiliation')}}">
-                                                                    </div>
-                                                                    <div class="col-sm">
-                                                                        <label >Data de Emissão do Documento</label>
-                                                                        <input type="date" class="form-control" name="doc_emition" placeholder="seleccione a data"" value="{{old('phone_number')}}">
-                                                                    </div>
-                                                                </div>
-
-
-                                                                    </div>
-                                                                    <div class="text-center mb-3">
-                                                                    <button type="submit" class="btn btn-success mt-3">CADASTRAR </button>
-                                                                    </div>
+                                                                    
                                                                 </form>
 
 
@@ -351,8 +261,8 @@
                                                                     </div>
 
                                                                     <div class="col-sm">
-                                                                        <label class="text-white"> Visitante ID</label>
-                                                                         <input type="text" id="visitorid" name="visitor_id" placeholder="Ache o Visitante presente" class="form-control" readonly @error('visitor_id') is-invalid @enderror>
+                                                                       
+                                                                         <input type="hidden" id="visitorid" name="visitor_id" placeholder="Ache o Visitante presente" class="form-control" readonly @error('visitor_id') is-invalid @enderror>
                                                                          @error('visitor_id')
                                                                          <span class="invalid-feedback" role="alert">
                                                                              <strong>{{ $message }}</strong>
@@ -378,8 +288,8 @@
                                                                 </div>
 
                                                                 <div class="col-sm">
-                                                                    <label class="text-white">ID Funcionario</label>
-                                                                    <input type="text" id="employeeid" name="user_id"  class="form-control" readonly @error('user_id') is-invalid @enderror>
+                                                                    
+                                                                    <input type="hidden" id="employeeid" name="user_id"  class="form-control" readonly @error('user_id') is-invalid @enderror>
                                                                     @error('user_id')
                                                                     <span class="invalid-feedback" role="alert">
                                                                         <strong>{{ $message }}</strong>
@@ -411,7 +321,7 @@
 
                                                                   <div class="col-sm">
                                                                       <label class="text-white"> Escolha o Numero de PVC</label>
-                                                                      <select name="pvc_id" id="" class="form-control" value="{{old('pvcs_id')}}" @error('pvc_id') is-invalid @enderror>
+                                                                      <select name="pvc_id" id="" type="hidden" class="form-control" value="{{old('pvcs_id')}}" @error('pvc_id') is-invalid @enderror>
                                                                         @error('pvc_id')
                                                                         <span class="invalid-feedback" role="alert">
                                                                             <strong>{{ $message }}</strong>

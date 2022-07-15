@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Support\Facades\Hash;
 
-use App\{User, Police_rank, Level, Direction, Gender, Status, Section, Department, floor, Group};
+use App\{User, Police_rank, Level, Direction, Gender, Status, Section, Department, Floor, Group};
 
 
 class UserController extends Controller
