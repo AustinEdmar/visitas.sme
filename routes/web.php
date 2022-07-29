@@ -93,9 +93,7 @@ use Illuminate\Support\Facades\Route;
 
             Route::get('autocomplete', 'UserController@autocomplete')->name('autocomplete');
 
-            /* Route::get('user/perfil/{id}', 'UserController@perfil')->name('user.perfil'); */
-
-           /*  Route::get('user/view/{id}', 'UserController@userView')->name('user.view'); */
+       
 
             Route::resource('floor', 'FloorController');
             Route::get('floor/delete/{id}', 'FloorController@delete')->name('floor.delete');
@@ -138,6 +136,8 @@ use Illuminate\Support\Facades\Route;
 
         Route::post('manage_subject/search','Manage_subjectController@getUsers')->name("manage.searchUsers");
 
+        Route::post('user/search','UserController@getUsers')->name("user.searchUsers");
+
         Route::post('visitor/search','VisitorController@getVisitors')->name("visitor.searchUsers");
 
         Route::post('manage_subject/getvisitor','Manage_subjectController@getVisitors')->name("visitor.search");
@@ -145,6 +145,11 @@ use Illuminate\Support\Facades\Route;
         Route::resource('things','ThingController');
         Route::get('things/delete/{id}', 'ThingController@delete')->name('things.delete');
 
+    });
+
+    Route::get('/clear-cache', function() {
+        Artisan::call('cache:clear');
+        return "Cache esta limpo";
     });
 
  });

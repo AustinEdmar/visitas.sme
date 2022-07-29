@@ -42,13 +42,15 @@
 
                                     <input name="gender_id"  class="form-control" value="{{$users->gender->name}}" readonly>
 
-                                 </input>
+      
 
 
 
                             </div>
                           </div>
                           @endif
+                          
+
                           <div class="col-sm">
                             <label class="text-white" >Data de Nascimento</label>
                             <input type="text" class="form-control" name="birthday" placeholder="Escreva a data de aniversario" value="{{$users->birthday}}" inputed>
@@ -57,18 +59,31 @@
                           @if ($user->level->id != '4' && $user->level->id != '3')
                           <div class="col-sm">
                             <label class="text-white" >Nivel Status</label>
-                            <input name="status_id" id="" class="form-control" value="{{$users->status->name}}" readonly>
+                            
 
-                         </input>
+                            <select name="status_id" id="" class="form-control" value="{{old('floor_id')}}">
+                                
+                              <option hidden selected value="{{$users->status->id}}">{{$users->status->name }}</option>
+
+                                @foreach ($status as $statu )
+                                        <option value="{{$statu->id}}">{{$statu->name}}</option>
+                                @endforeach
+                           </select>
 
                           </div>
                           @endif
                           @if ($user->level->id != '4' && $user->level->id != '3')
                           <div class="col-sm">
                             <label class="text-white" >Nivel de Acesso</label>
-                            <input name="level_id" id="" class="form-control" value="{{$users->level->name}}" readonly>
+                            
+                            <select name="level_id" id="" class="form-control" value="{{old('floor_id')}}">
+                                
+                              <option hidden selected value="{{$users->level->id}}">{{$users->level->name }}</option>
 
-                       </input>
+                                @foreach ($levels as $level )
+                                        <option value="{{$level->id}}">{{$level->name}}</option>
+                                @endforeach
+                           </select>
                         </div>
                         @endif
 
@@ -93,9 +108,18 @@
                             @if ($user->level->id != '4' && $user->level->id != '3')
                             <div class="col-sm">
                                 <label class="text-white" >Andar</label>
-                                <input name="floor_id" id="" class="form-control" value="{{$users->floor->name}}" readonly>
+                                
 
-                           </input>
+                                <select name="floor_id" id="" class="form-control" value="{{old('floor_id')}}">
+                                
+                                  <option hidden selected value="{{$users->floor->id}}">{{$users->floor->name }}</option>
+  
+                                    @foreach ($floors as $floor )
+                                            <option value="{{$floor->id}}">{{$floor->name}}</option>
+                                    @endforeach
+                               </select>
+
+
                             </div>
                             @endif
 
@@ -105,23 +129,30 @@
                         <div class="row">
                             @if ($user->level->id != '4' && $user->level->id != '3')
 
-                            <div class="col-sm">
-                                <label class="text-white" >Patente</label>
-                                <input name="police_rank_id" id="" class="form-control" value="{{$users->police_rank->name}}" readonly>
+                           
 
-                           </input>
-                            </div>
+                            <div class="col-sm">
+                              <span>Patente</span>
+                              <select name="police_rank_id" id="" class="form-control" value="{{old('police_rank_id')}}">
+                                
+                                <option hidden selected value="{{$users->police_rank->id}}">{{$users->police_rank->name}}</option>
+
+                                  @foreach ($police_ranks as $police_rank )
+                                          <option value="{{$police_rank->id}}">{{$police_rank->name}}</option>
+                                  @endforeach
+                         </select>
+                          </div>
 
                             @endif
 
                             <div class="col-sm">
                                 <label class="text-white" >Senha</label>
-                                <input type="password" class="form-control" name="password" placeholder="Escreva a senha"" value="{{('923.eddy')}}">
+                                <input type="password" class="form-control" name="password" placeholder="Escreva a senha" autocomplete="off">
                             </div>
 
                             <div class="col-sm">
                                 <label class="text-white" > Repetir a Senha</label>
-                                <input type="password" class="form-control" name="password_confirmation" placeholder="Escreva a senha"" value="{{('923.eddy')}}">
+                                <input type="password" class="form-control" name="password_confirmation" placeholder="Escreva a senha" >
                             </div>
 
 
@@ -132,35 +163,21 @@
                         <div class="row">
 
                             <div class="col-sm">
-                                <label class="text-white" >Direcção</label>
-                                <input class="form-control"  value="{{$users->direction->name ??''}}">
+                                <label class="text-white" >Pertence a area</label>
+                                
+                                
+                                <select name="direction_id" id="" class="form-control" value="{{old('direction_id')}}">
+                                
+                                  <option hidden selected value="{{$users->direction->id}}">{{$users->direction->name }}</option>
+  
+                                    @foreach ($directions as $direction )
+                                            <option value="{{$direction->id}}">{{$direction->name}}</option>
+                                    @endforeach
+                               </select>
 
-                           </input>
+
                             </div>
-                            <div class="col-sm">
-                                <label class="text-white" >Departamento</label>
-                                <input name="department_id" id="" class="form-control" value="{{$users->department->name ??''}}" readonly>
-
-                           </input>
-                            </div>
-                            {{-- @if ($user->)
-
-                            @endif --}}
-
-
-                            <div class="col-sm">
-                                <label class="text-white" >Secção</label>
-                                <input name="section_id" id="" class="form-control" value="{{$users->section->name ?? ''}}" readonly>
-
-                           </input>
-                            </div>
-
-                            <div class="col-sm">
-                                <label class="text-white" > Grupo Pertencente</label>
-                                <input name="group_id" id="" class="form-control" value="{{$users->group->name}}" readonly>
-
-                           </input>
-                            </div>
+                           
 
 
                         </div>

@@ -30,14 +30,14 @@ class VisitorController extends Controller
         $genders = Gender::get();
         $nacionalities = Nacionality::get();
        
-      /* aqui vem */
+    
 
       try {
 
 
         $search = $request->passaporte;
 
-        $responseMovimento = http::withBasicAuth('sme@gov.ao','Passw0rd!')->post('http://192.168.1.74/api/NumeroDocumentoMovimento',
+        $responseMovimento = http::withBasicAuth('sme@gov.ao','Passw0rd!')->get('http://192.168.1.74/api/NumeroDocumentoMovimentos',
         [
         
         /* E33860474 */

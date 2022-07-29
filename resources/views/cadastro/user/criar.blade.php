@@ -16,6 +16,9 @@
 
               <button type="button" class="btn btn-warning mb-3" data-toggle="modal" data-target=".bd-example-modal-lg">Cadastrar Novo</button>
 
+              
+            
+
                     <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-lg">
 
@@ -49,8 +52,8 @@
                                                 <div class="">
                                                     <div class="row">
                                                       <div class="col-sm">
-                                                          oi
-                                                        <label  >Nome do Usuario</label>
+                                                    
+                                                        <span  >Nome do Usuario</span>
                                                         <input type="text" class="form-control " name="name" placeholder="Escreva o nome" value="" autocomplete="off">
 
                                                         @error('name')
@@ -59,31 +62,31 @@
 
                                                       </div>
                                                       <div class="col-sm-2">
-                                                        <label >Sexo</label>
+                                                        <span>Sexo</span>
 
                                                         <div>
                                                             @foreach ($genders as $gender )
                                                             <span>
-                                                                <label >
+                                                                <span>
                                                                     <input type="radio" name="gender_id" id="" class="" value="{{$gender->id}}">
                                                                     <span>{{$gender->name}}</span>
 
                                                                     @error('gender_id')
                                                                      <span class="text-danger">{{$message}}</span>
                                                                     @enderror
-                                                                </label>
+                                                                </span>
                                                             </span>
 
                                                            @endforeach
                                                         </div>
                                                       </div>
                                                       <div class="col-sm">
-                                                        <label >Data de Nascimento</label>
+                                                        <span>Data de Nascimento</span>
                                                         <input type="" class="form-control" name="birthday" placeholder="Escreva a data de aniversario" value="">
 
                                                       </div>
                                                       <div class="col-sm">
-                                                        <label >Nivel Status</label>
+                                                        <span>Nivel Status</span>
                                                         <select name="status_id" id="" class="form-control" value=" ">
                                                             @foreach(App\Status::where('name','=','Activo')->get() as $statu)
 
@@ -94,7 +97,7 @@
 
                                                       </div>
                                                       <div class="col-sm">
-                                                        <label >Nivel de acesso</label>
+                                                        <span>Nivel de acesso</span>
                                                         <select name="level_id" id="" class="form-control" value="{{old('level_id')}}">
                                                             <option value="">
                                                                 Selecione o Nivel de Acesso
@@ -108,21 +111,21 @@
                                                     </div>
                                                     <div class="row">
                                                         <div class="col-sm">
-                                                            <label >Insira a Foto</label>
+                                                            <span>Insira a Foto</span>
                                                             <input type="file" class="form-control" name="image" placeholder="insira a foto" value="{{old('image')}}">
                                                         </div>
 
 
                                                         <div class="col-sm">
-                                                            <label >Telefone</label>
+                                                            <span>Telefone</span>
                                                             <input type="number" class="form-control" name="phone_number" placeholder="Escreva o celular" value=" ">
                                                         </div>
                                                         <div class="col-sm">
-                                                            <label >Email</label>
+                                                            <span>Email</span>
                                                             <input type="email" class="form-control" name="email" placeholder="Escreva o celular" value="">
                                                         </div>
                                                         <div class="col-sm">
-                                                            <label >Andar</label>
+                                                            <span>Andar</span>
                                                             <select name="floor_id" id="" class="form-control" value="{{old('floor_id')}}">
                                                                 <option value="">
                                                                     Selecione o Andar
@@ -138,7 +141,7 @@
 
                                                     <div class="row">
                                                         <div class="col-sm">
-                                                            <label >Patente</label>
+                                                            <span>Patente</span>
                                                             <select name="police_rank_id" id="" class="form-control" value="{{old('police_rank_id')}}">
                                                                 <option value="">
                                                                     Selecione a Patente
@@ -150,13 +153,13 @@
                                                         </div>
 
                                                         <div class="col-sm">
-                                                            <label >Senha</label>
-                                                            <input type="password" class="form-control" name="password" placeholder="Escreva a senha" value=" ">
+                                                            <span>Senha</span>
+                                                            <input type="password" class="form-control" name="password" placeholder="Escreva a senha">
                                                         </div>
 
                                                         <div class="col-sm">
-                                                            <label > Repetir a Senha</label>
-                                                            <input type="password" class="form-control" name="password_confirmation" placeholder="Escreva a senha" value="">
+                                                            <span> Repetir a Senha</span>
+                                                            <input type="password" class="form-control" name="password_confirmation" placeholder="Escreva a senha" >
                                                         </div>
 
                                                     </div>
@@ -164,42 +167,38 @@
                                                     <div class="row">
 
                                                         <div class="col-sm">
-                                                            <label >Direcção</label>
+                                                            <span>Local onde Trabalha</span>
                                                             <select name="direction_id" id="" class="form-control" value="{{old('direction_id')}}">
-                                                                <option value="">
-                                                                    Selecione a Direcção
+                                                                <option class="bg-warning">
+                                                                    Seleccione: Sou Director(a) da/do
                                                                 </option>
-                                                                @foreach ($directions as $direction )
-                                                                        <option value="{{$direction->id}}">{{$direction->name}}</option>
+                                                                @foreach ($directions as $key => $direction )
+                                                                        <option value="{{$direction->id}}">{{$key+1}} - {{$direction->name}}</option>
                                                                 @endforeach
-                                                       </select>
-                                                        </div>
-                                                        <div class="col-sm">
-                                                            <label >Departamento</label>
-                                                            <select name="department_id" id="" class="form-control" value="{{old('departments_id')}}">
-                                                                <option value="">
-                                                                    Selecione o Departamento
-                                                                </option>
-                                                                @foreach ($departments as $department )
-                                                                        <option value="{{$department->id}}">{{$department->name}}</option>
-                                                                @endforeach
-                                                       </select>
-                                                        </div>
 
-                                                        <div class="col-sm">
-                                                            <label >Secção</label>
-                                                            <select name="section_id" id="" class="form-control" value="{{old('section_id')}}">
-                                                                <option value="">
-                                                                    Selecione a Secção
+                                                                    <hr>
+                                                                    <option value="" class="bg-warning">
+                                                                    Selecione: Pertenço ao Departamento
                                                                 </option>
-                                                                @foreach ($sections as $section )
-                                                                        <option value="{{$section->id}}">{{$section->name}}</option>
+                                                                @foreach ($departments as $key => $department )
+                                                                        <option value="{{$department->id}}">{{$key+1}} - {{$department->name}}</option>
+                                                                @endforeach
+                                                                <hr>
+
+                                                                <option class="bg-warning">
+                                                                    Selecione Pertenço a Secção
+                                                                </option>
+                                                                @foreach ($sections as $key => $section )
+                                                                        <option value="{{$section->id}}">{{$key+1}} - {{$section->name}}</option>
                                                                 @endforeach
                                                        </select>
                                                         </div>
+                                                       
 
-                                                        <div class="col-sm">
-                                                            <label >Grupo Pertencente / Direcção</label>
+                                                       
+
+                                                       <!--  <div class="col-sm">
+                                                            <span>Grupo Pertencente / Direcção</span>
                                                             <select name="group_id" id="" class="form-control" value="{{old('group_id')}}">
                                                                 <option value="">
                                                                     Selecione a direcção o qual Pertence
@@ -208,7 +207,7 @@
                                                                         <option value="{{$group->id}}">{{$group->name}}</option>
                                                                 @endforeach
                                                        </select>
-                                                        </div>
+                                                        </div> -->
 
 
                                                     </div>

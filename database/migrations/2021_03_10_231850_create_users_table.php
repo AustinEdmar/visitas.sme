@@ -55,8 +55,8 @@ class CreateUsersTable extends Migration
             $table->unsignedBigInteger('status_id');
             $table->foreign('status_id')->references('id')->on('statuses')->onDelete('cascade');
 
-            $table->unsignedBigInteger('group_id');
-            $table->foreign('group_id')->references('id')->on('groups')->onDelete('cascade');
+           /*  $table->unsignedBigInteger('group_id');
+            $table->foreign('group_id')->references('id')->on('groups')->onDelete('cascade'); */
             
             $table->unsignedBigInteger('floor_id');
             $table->foreign('floor_id')->references('id')->on('floors')->onDelete('cascade');

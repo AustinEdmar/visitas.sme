@@ -58,7 +58,7 @@ class UserController extends Controller
         $floors = Floor::get();
 
         $users = User::latest()->paginate(5);
-        return view('cadastro.user.create', compact(
+        return view('cadastro.user.criar', compact(
             'users',
             'police_ranks',
             'levels',
@@ -82,32 +82,13 @@ class UserController extends Controller
 
         $this->validate($request, [
 
-            /*
-            'name' => 'required',
-            'birthday' => 'required',
-            'gender_id' => 'required',
-            'status_id' => 'required',
-            'level_id' => 'required',
-            'image'=>'required|mimes:jpeg,jpg,png',
-            'phone_number' => 'required',
-            'email'=>'required|string|email|max:255|unique:users',
-            'police_rank_id' => 'required',
-            'direction_id' => 'required',
-            'department_id' => 'required',
-            'section_id' => 'required',
- */
+       
             'password' => 'required|string',
             'password_confirmation' => 'sometimes|required_with:password',
 
         ]);
 
-        /* if ($request->hasFile('image')) {
-            $image = $request->image->hashName();
-            $request->image->move(public_path('user'), $image);
-        } else {
-            $image = 'avatar2.png';
-        } */
-
+      
 
 
         if ($image = $request->file('image')) {
@@ -116,11 +97,7 @@ class UserController extends Controller
             $image->move($destinationPath, $profileImage);
             $data['image'] = "$profileImage";
         }
-
-
-
-
-
+        
 
         /* $data['image'] = $image; */
         $data['name'] = $request->name;
@@ -190,25 +167,17 @@ class UserController extends Controller
             'password' => 'confirmed',
             ]);
 
-        /* if ($request->hasFile('image')) {
-            $image = $request->image->hashName();
-            $request->image->move(public_path('user'), $image);
-        } else {
-            $image = 'avatar2.png';
-        } */
+       
+            if ($image = $request->file('image')) {
+                $destinationPath = 'image/';
+                $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+                $image->move($destinationPath, $profileImage);
+                $input['image'] = "$profileImage";
+            }else{
 
-        if ($image = $request->file('image')) {
-            $destinationPath = 'image/';
-            $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
-            $image->move($destinationPath, $profileImage);
-            $data['image'] = "$profileImage";
-        }else{
             unset($data['image']);
         }
 
-
-
-        /* $data['image'] = $image; */
         $data['name'] = $request->name;
         $data['email'] = $request->email;
         $data['birthday'] = $request->birthday;
@@ -250,15 +219,75 @@ class UserController extends Controller
 
         $where = array('id' => $id);
 		$users = User::where($where)->first();
+        $police_ranks = Police_rank::get();
 
+        $sections = Section::get();
+        $departments = Department::get();
+        $levels = Level::get();
+        $directions = Direction::get();
+        $genders = Gender::get();
+        $status = Status::get();
+        $groups = Group::get();
+        $floors = Floor::get();
 
 
         return view('cadastro.user.perfil', compact(
             'users',
+            'police_ranks',
+            'levels',
+            'directions',
+            'genders',
+            'status',
+            'departments',
+            'groups',
+            'floors',
+            'sections'
 
 
         ));
     }
+
+    public function getUsers(Request $request){
+        $search = $request->search;
+
+        if($search == ''){
+            $users = User::orderby("name","asc")
+                                    ->select("id","name")
+                                   // ->limit(5)
+                                    ->get();
+        }else{
+            $users = User::orderby("name","asc")
+                                    ->select("id","name","email")
+                                    ->where("name","like","%".$search."%")
+                                   // ->limit(5)
+                                    ->get();
+
+        }
+
+
+
+        $response = array();
+        foreach($users as $user){
+            $response[] = array(
+                "value" => $user->id,
+                /* 1-passa no input email
+                <input type="email" id="usermail" readonly>
+              2- no jquery
+                    $('#usermail').val(ui.item.email);
+                */
+                "name" => $user->name,
+                "label" => $user->name
+            );
+        }
+
+
+        return response()->json($response);
+
+
+    }
+
+    
+
 
 
 

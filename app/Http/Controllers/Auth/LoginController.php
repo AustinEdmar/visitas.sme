@@ -33,6 +33,7 @@ class LoginController extends Controller
      *
      * @return void
      */
+   
 
 
  protected function authenticated(Request $request, $user){
@@ -49,4 +50,6 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+   
 }

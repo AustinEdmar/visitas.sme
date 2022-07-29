@@ -94,6 +94,7 @@ class Manage_subjectController extends Controller
 
 
         $response = array();
+        
         foreach($users as $user){
             $response[] = array(
                 "value" => $user->id,
