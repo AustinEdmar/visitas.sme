@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
-use App\{Level, Gender, Visitor, Nacionality, Pvc, Progress, Police_rank, Status, Document, Direction, Floor, Department, Group, Section, User};
+use App\{Level, Gender, Visitor, Nacionality, Pvc, Progress, Police_rank, Status, Document, Direction, Floor, Department, Group, Section, User, Thing};
 
 class DatabaseSeeder extends Seeder
 {
@@ -576,8 +576,7 @@ class DatabaseSeeder extends Seeder
             'direction_id' => '1',
             'gender_id' => '1',
             'status_id' => '1',
-            'group_id' => '1',
-            'floor_id' => '1',
+            
             'email' => 'domingosmussumar@gmail.com',
             'password' => Hash::make('923.eddy')
 
@@ -594,8 +593,7 @@ class DatabaseSeeder extends Seeder
             'direction_id' => '1',
             'gender_id' => '1',
             'status_id' => '1',
-            'group_id' => '2',
-            'floor_id' => '2',
+            
             'email' => 'wilsom@gmail.com',
             'password' => Hash::make('923.eddy')
 
@@ -612,8 +610,7 @@ class DatabaseSeeder extends Seeder
             'direction_id' => '1',
             'gender_id' => '1',
             'status_id' => '1',
-            'group_id' => '3',
-            'floor_id' => '3',
+           
             'email' => 'felgueiras@gmail.com',
             'password' => Hash::make('923.eddy')
 
@@ -629,8 +626,7 @@ class DatabaseSeeder extends Seeder
             'direction_id' => '1',
             'gender_id' => '1',
             'status_id' => '1',
-            'group_id' => '4',
-            'floor_id' => '4',
+           
             'email' => 'dombaxi@gmail.com',
             'password' => Hash::make('923.eddy')
 
@@ -649,8 +645,7 @@ class DatabaseSeeder extends Seeder
             'department_id' => '1',
             'gender_id' => '2',
             'status_id' => '1',
-            'group_id' => '5',
-            'floor_id' => '5',
+            
 
             'email' => 'esmeralda@gmail.com',
             'password' => Hash::make('923.eddy')
@@ -668,8 +663,7 @@ class DatabaseSeeder extends Seeder
             'department_id' => '1',
             'gender_id' => '1',
             'status_id' => '1',
-            'group_id' => '6',
-            'floor_id' => '4',
+           
 
             'email' => 'paulo@gmail.com',
             'password' => Hash::make('923.eddy')

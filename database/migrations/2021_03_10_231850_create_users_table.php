@@ -29,10 +29,6 @@ class CreateUsersTable extends Migration
             $table->BigInteger('phone_number')->unique();
 
 
-            /* $table->foreignId('manage_subject_id')->constrained();
-            $table->foreignId('police_rank_id')->constrained();
-            $table->foreignId('level_id')->constrained();
-            $table->foreignId('directions_id')->constrained(); */
 
             $table->unsignedBigInteger('police_rank_id');
             $table->foreign('police_rank_id')->references('id')->on('police_ranks')->onDelete('cascade');
@@ -55,12 +51,7 @@ class CreateUsersTable extends Migration
             $table->unsignedBigInteger('status_id');
             $table->foreign('status_id')->references('id')->on('statuses')->onDelete('cascade');
 
-           /*  $table->unsignedBigInteger('group_id');
-            $table->foreign('group_id')->references('id')->on('groups')->onDelete('cascade'); */
-            
-            $table->unsignedBigInteger('floor_id');
-            $table->foreign('floor_id')->references('id')->on('floors')->onDelete('cascade');
-
+           
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

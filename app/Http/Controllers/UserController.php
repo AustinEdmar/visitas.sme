@@ -58,6 +58,8 @@ class UserController extends Controller
         $floors = Floor::get();
 
         $users = User::latest()->paginate(5);
+
+
         return view('cadastro.user.criar', compact(
             'users',
             'police_ranks',
@@ -111,8 +113,8 @@ class UserController extends Controller
         $data['section_id'] = $request->section_id;
         $data['gender_id'] = $request->gender_id;
         $data['status_id'] = $request->status_id;
-        $data['group_id'] = $request->group_id;
-        $data['floor_id'] = $request->floor_id;
+      
+        
 
 
         $data['password'] = Hash::make($request->password);

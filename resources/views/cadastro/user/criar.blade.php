@@ -124,17 +124,7 @@
                                                             <span>Email</span>
                                                             <input type="email" class="form-control" name="email" placeholder="Escreva o celular" value="">
                                                         </div>
-                                                        <div class="col-sm">
-                                                            <span>Andar</span>
-                                                            <select name="floor_id" id="" class="form-control" value="{{old('floor_id')}}">
-                                                                <option value="">
-                                                                    Selecione o Andar
-                                                                </option>
-                                                                @foreach ($floors as $floor )
-                                                                        <option value="{{$floor->id}}">{{$floor->name}}</option>
-                                                                @endforeach
-                                                       </select>
-                                                        </div>
+                                                   
 
 
                                                     </div>
@@ -154,12 +144,12 @@
 
                                                         <div class="col-sm">
                                                             <span>Senha</span>
-                                                            <input type="password" class="form-control" name="password" placeholder="Escreva a senha">
+                                                            <input type="password" class="form-control" name="password" placeholder="Escreva a senha" autocomplete="off">
                                                         </div>
 
                                                         <div class="col-sm">
                                                             <span> Repetir a Senha</span>
-                                                            <input type="password" class="form-control" name="password_confirmation" placeholder="Escreva a senha" >
+                                                            <input type="password" class="form-control" name="password_confirmation" placeholder="Escreva a senha" autocomplete="off" >
                                                         </div>
 
                                                     </div>
@@ -197,17 +187,7 @@
 
                                                        
 
-                                                       <!--  <div class="col-sm">
-                                                            <span>Grupo Pertencente / Direcção</span>
-                                                            <select name="group_id" id="" class="form-control" value="{{old('group_id')}}">
-                                                                <option value="">
-                                                                    Selecione a direcção o qual Pertence
-                                                                </option>
-                                                                @foreach ($groups as $group )
-                                                                        <option value="{{$group->id}}">{{$group->name}}</option>
-                                                                @endforeach
-                                                       </select>
-                                                        </div> -->
+                                                      
 
 
                                                     </div>
